@@ -281,7 +281,7 @@
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBigClusterMaxFreq",
-      "Duration": 2000,
+      "Duration": 5000,
       "Value": "2150400"
     },
     {
