@@ -205,7 +205,6 @@ PRODUCT_PACKAGES += \
     vendor.display.color@1.0-impl \
     vendor.display.config@2.0 \
     vendor.display.config@2.0_vendor \
-    copybit.msm8996 \
     gralloc.msm8996 \
     hwcomposer.msm8996 \
     memtrack.msm8996 \
