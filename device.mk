@@ -319,7 +319,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/siw_touch_input.idc:system/usr/idc/siw_touch_input.idc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/AK8789_HALL_SENSOR.kl:system/usr/keylayout/AK8789_HALL_SENSOR.kl \
     $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/keylayout/siw_touch_input.kl:system/usr/keylayout/siw_touch_input.kl \
