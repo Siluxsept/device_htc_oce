@@ -1054,10 +1054,10 @@ vendor/lib/libwfdhdcpcp.so|e459d08d32b9d93f498413172625861d3cc08c5c
 vendor/lib/libwfdmmservice.so|f4fcd4b9af63d5c4f352240fd040dcabb74ec22f
 vendor/lib/libwfdmodulehdcpsession.so|b252efdbd4669ed6e8db7d5f77999c9bb5b0b9c4
 
-# Widevine DRM - Marlin - 9.0.0 (PPR2.181005.003, Oct 2018)
-vendor/bin/hw/android.hardware.drm@1.0-service.widevine|fd6e14710c196fdd4131afe2ce10c4a5be1b309c
+# 1.0 from oce stock
+vendor/bin/hw/android.hardware.drm@1.0-service.widevine|65da8d878c199742965e40e0ab7ac5e3c3e84098
 vendor/etc/init/android.hardware.drm@1.0-service.widevine.rc|51a3168a0dbc064d78ee11ca83614c0cd2e6daa5
-vendor/lib/libwvhidl.so|f7288f7a7ed6765bd1d80d639a0aeb0c31eda795
+vendor/lib/libwvhidl.so|c9a1691b18f589ad3ff0a98ff2de1f8965dc1b16
 
 # Widevine firmware - Marlin - 9.0.0 (PPR2.181005.003, Oct 2018)
 vendor/firmware/widevine.b00|e9613fee8d03b152dd66f667feb493775da995ca
