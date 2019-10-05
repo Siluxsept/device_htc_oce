@@ -118,8 +118,12 @@ void vendor_load_properties()
         }
     } else if (bootmid == "2PZF30000") {
         load_properties(htc_dtwl_properties);
+        property_override("rild.libpath", "/vendor/lib64/libril_dtwl-qc-qmi-1.so");
+        property_override("rild.vendor.libpath", "/vendor/lib64/libril_dtwl-qc-qmi-1.so");
     } else if (bootmid == "2PZF10000") {
         load_properties(htc_uhl_properties);
+        property_override("rild.libpath", "/vendor/lib64/libril_uhl-qc-qmi-1.so");
+        property_override("rild.vendor.libpath", "/vendor/lib64/libril_uhl-qc-qmi-1.so");
     } else {
         if (is_variant_duglhk(bootcid)) {
             load_properties(htc_duglhk_properties);
