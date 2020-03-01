@@ -331,11 +331,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/siw_touch_input.kl:system/usr/keylayout/siw_touch_input.kl \
     $(LOCAL_PATH)/keylayout/himax-touchscreen-cap.kl:system/usr/keylayout/himax-touchscreen-cap.kl
 
-# IPv6
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes
-
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
