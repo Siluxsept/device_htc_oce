@@ -3106,6 +3106,9 @@
         <path name="speaker-dmic-endfire" />
     </path>
 
+    <path name="aanc-path">
+    </path>
+
     <path name="voice-rec-dmic-ef">
         <path name="dmic-endfire" />
     </path>
