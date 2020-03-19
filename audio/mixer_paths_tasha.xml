@@ -3300,5 +3300,8 @@
     <path name="voice-rx-jbl">
     </path>
 
-
+    <path name="voice-tx">
+    </path>
+    <path name="voice-rx">
+    </path>
 </mixer>
