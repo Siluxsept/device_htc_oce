@@ -14,3 +14,5 @@ type sysfs_class_leds, fs_type, sysfs_type;
 type sys_virtual_rmnet, fs_type, sysfs_type;
 type sys_virtual_net, fs_type, sysfs_type;
 type sys_virtual_wifi, fs_type, sysfs_type;
+type nanohub_lock_file, file_type, data_file_type, core_data_file_type;
+type audio_configs_file, file_type, system_file_type;

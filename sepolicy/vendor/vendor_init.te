@@ -16,6 +16,7 @@ allow vendor_init {
   fingerprintd_data_file
   heapdump_data_file
   media_rw_data_file
+  nanohub_lock_file
   nfc_data_file
   preloads_data_file
   preloads_media_file
@@ -32,3 +33,5 @@ allow vendor_init rootfs:lnk_file relabelfrom;
 allow vendor_init carrier_file:dir relabelto;
 allow vendor_init carrier_file:file relabelto;
 allow vendor_init block_device:lnk_file setattr;
+allow vendor_init system_data_file:lnk_file create;
+allow vendor_init nanohub_lock_file:dir relabelto;

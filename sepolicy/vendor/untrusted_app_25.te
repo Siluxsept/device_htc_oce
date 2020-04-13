@@ -1,0 +1,1 @@
+allow untrusted_app_25 rootfs:dir r_dir_perms;

@@ -1,0 +1,5 @@
+allow untrusted_app_27 sysfs_kgsl:file r_file_perms;
+allow untrusted_app_27 rootfs:dir r_dir_perms;
+allow untrusted_app_27 sysfs_kgsl_proc:dir r_dir_perms;
+allow untrusted_app_27 proc_zoneinfo:file r_file_perms;
+allow untrusted_app_27 proc_qtaguid_stat:file r_file_perms;

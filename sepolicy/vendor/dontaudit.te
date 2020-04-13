@@ -130,6 +130,4 @@ dontaudit flags_health_check vendor_wifi_version:file *;
 dontaudit flags_health_check vendor_xlat_prop:file *;
 dontaudit flags_health_check wifi_prop:file *;
 
-dontaudit rild carrier_file:file ioctl;
-
 dontaudit fsck_untrusted vold_device:blk_file ioctl;

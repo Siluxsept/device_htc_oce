@@ -3,8 +3,26 @@
 
 # Audio
 /dev/htc-acoustic                                                                               u:object_r:audio_device:s0
+/system/etc/audio_effects.xml    u:object_r:audio_configs_file:s0
+/dev/msm_audio_cal             u:object_r:audio_device:s0
+/dev/msm_rtac                  u:object_r:audio_device:s0
 
 # Block Devices
+/dev/block/platform/soc/624000\.ufshc/by-name/boot                           u:object_r:boot_block_device:s0
+/dev/block/bootdevice/by-name/boot                                            u:object_r:boot_block_device:s0
+
+/dev/block/platform/soc/624000\.ufshc/by-name/cache                          u:object_r:cache_block_device:s0
+/dev/block/bootdevice/by-name/cache                                           u:object_r:cache_block_device:s0
+
+/dev/block/platform/soc/624000\.ufshc/by-name/persist                        u:object_r:persist_block_device:s0
+/dev/block/bootdevice/by-name/persist                                         u:object_r:persist_block_device:s0
+
+/dev/block/platform/soc/624000\.ufshc/by-name/radio                          u:object_r:modem_block_device:s0
+/dev/block/bootdevice/by-name/radio                                           u:object_r:modem_block_device:s0
+
+/dev/block/platform/soc/624000\.ufshc/by-name/xbl                            u:object_r:xbl_block_device:s0
+/dev/block/bootdevice/by-name/xbl                                             u:object_r:xbl_block_device:s0
+
 /dev/block/platform/soc/624000\.ufshc/by-name/frp                        u:object_r:frp_block_device:s0
 /dev/block/bootdevice/by-name/frp                                         u:object_r:frp_block_device:s0
 
@@ -16,6 +34,9 @@
 
 /dev/block/platform/soc/624000\.ufshc/by-name/extra                        u:object_r:metadata_block_device:s0
 /dev/block/bootdevice/by-name/extra                                         u:object_r:metadata_block_device:s0
+
+/dev/block/platform/soc/624000\.ufshc/by-name/userdata                        u:object_r:userdata_block_device:s0
+/dev/block/bootdevice/by-name/userdata                                         u:object_r:userdata_block_device:s0
 
 # Camera
 /sys/android_camera_awb_cal(/.*)?           u:object_r:sysfs_camera_awb_cal:s0
@@ -80,6 +101,7 @@
 /(vendor|system/vendor)/bin/nanoapp_cmd u:object_r:nanoapp_cmd_exec:s0
 /dev/nanohub                                     u:object_r:sensors_device:s0
 /dev/nanohub_comms                               u:object_r:sensors_device:s0
+/data/system/nanohub_lock(/.*)?                                               u:object_r:nanohub_lock_file:s0
 
 # Net
 /sys/devices/virtual/net/rmnet_ipa[0-9](/.*)?                       u:object_r:sys_virtual_rmnet:s0
@@ -94,10 +116,12 @@
 /data/misc/radio(/.*)?           u:object_r:radio_data_file:s0
 /dev/block/bootdevice/by-name/rfg_[0-9]+                                                        u:object_r:modem_efs_partition_device:s0
 /dev/block/platform/soc/624000.ufshc/by-name/rfg_[0-9]+                                                        u:object_r:modem_efs_partition_device:s0
+/(vendor|system/vendor)/radio/qcril_database/qcril.db                                  u:object_r:vendor_carrier_file:s0
 
 # Sensors
 /sys/bus/iio/devices(/.*)?                                          u:object_r:sysfs_sensors:s0
 /sys/devices/soc/757a000.spi/spi_master/spi6/spi6.0/iio:device0(/.*)?    u:object_r:sysfs_sensors:s0
+/sys/class/htc_sensorhub/sensor_hub(/.*)?				      u:object_r:sysfs_sensors:s0
 
 # Vibrator control
 /sys/devices/virtual/timed_output/vibrator/voltage_level            u:object_r:sysfs_vibeamp:s0

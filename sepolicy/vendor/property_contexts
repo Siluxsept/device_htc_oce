@@ -4,3 +4,6 @@ persist.net.doxlat                  u:object_r:vendor_xlat_prop:s0
 ro.gpu.available_frequencies        u:object_r:freq_prop:s0
 htc.camera.                  u:object_r:camera_prop:s0
 mfg.calibration.status              u:object_r:sensors_prop:s0
+wifi.active.interface               u:object_r:wifi_prop:s0
+rild.libpath                        u:object_r:vendor_rild_libpath_prop:s0
+rild.vendor.libpath                        u:object_r:vendor_rild_libpath_prop:s0

@@ -1,6 +1,13 @@
 allow rild carrier_file:file { getattr lock open read write create unlink };
 allow rild carrier_file:dir { search add_name open read remove_name write };
 allow rild vendor_file:file ioctl;
-allow rild radio_data_file:dir { open read search add_name write };
-allow rild radio_data_file:file { create getattr open read write };
+allow rild radio_data_file:dir { search add_name open read remove_name write };
+allow rild radio_data_file:file { getattr lock open read write create unlink };
 allow rild proc_qtaguid_stat:file { getattr open read };
+allow rild vendor_carrier_file:file { ioctl getattr lock open read };
+allow rild vendor_carrier_file:dir { search add_name open read remove_name };
+allow rild shell_exec:file execute_no_trans;
+allow rild unlabeled:dir { add_name open read remove_name search write };
+allow rild unlabeled:file { create ioctl open read write getattr lock unlink};
+
+set_prop(rild, vendor_rild_libpath_prop)
