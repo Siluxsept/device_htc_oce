@@ -496,4 +496,7 @@
 
     <!-- wellbeing trust permissions -->
     <string name="config_defaultWellbeingPackage">com.google.android.apps.wellbeing</string>
+
+    <!-- we don't have a menu key -->
+    <integer name="config_overrideHasPermanentMenuKey">2</integer>
 </resources>
