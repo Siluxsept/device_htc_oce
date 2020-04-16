@@ -483,4 +483,8 @@
     <!-- Whether device supports sensor based doze customizations -->
     <bool name="config_dozePulseTilt">true</bool>
     <bool name="config_dozePulseProximity">true</bool>
+
+    <!-- increase notifications on statusbar -->
+    <integer name="config_maxVisibleNotificationIcons">5</integer>
+    <integer name="config_maxVisibleNotificationIconsOnLock">6</integer>
 </resources>
