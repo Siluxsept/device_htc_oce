@@ -699,16 +699,6 @@ service charger /system/bin/charger
     group system graphics input
     seclabel u:r:charger:s0
 
-service vendor.cnss-daemon /vendor/bin/cnss-daemon -n -l
-    class late_start
-    user system
-    group system inet net_admin wifi
-    capabilities NET_ADMIN
-    writepid /dev/cpuset/system-background/tasks
-
-on property:sys.shutdown.requested=*
-    stop vendor.cnss-daemon
-
 service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.conf
     class core
     user root
