@@ -1,1 +1,2 @@
 allow cnd sysfs:file { open read };
+allow cnd wifi_prop:file r_file_perms;
