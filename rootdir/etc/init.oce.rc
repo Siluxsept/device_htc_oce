@@ -155,7 +155,7 @@ on post-fs-data
     mkdir /data/misc/qvop 0771 system system
 
 on early-boot
-    exec u:r:htc-fp:s0 -- /vendor/bin/init.htc.fp.sh
+    start vendor.htc.fp_sh
 
     # For MFG socket
     mkdir /data/fpc 0770 system system

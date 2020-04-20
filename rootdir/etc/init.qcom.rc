@@ -629,6 +629,14 @@ service vendor.foreground_sh /vendor/bin/init.foreground.sh
     disabled
     oneshot
 
+service vendor.htc.fp_sh /vendor/bin/init.htc.fp.sh
+    class main
+    user system
+    group system
+    seclabel u:r:htc-fp:s0
+    disabled
+    oneshot
+
 service vendor.rmt_storage /vendor/bin/rmt_storage
     class core
     user root
