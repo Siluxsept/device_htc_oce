@@ -691,9 +691,19 @@ service qcom-sh /vendor/bin/init.qcom.sh
     group root system radio
     oneshot
 
+service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
+    class late_start
+    user root
+    group root system wakelock graphics
+    disabled
+    oneshot
+
 on class_start:late_start
     # For modem config copy
     write /data/misc/radio/copy_complete 1
+
+on property:sys.boot_completed=1
+    start qcom-post-boot
 
 service vendor.atfwd /vendor/bin/ATFWD-daemon
     class late_start
@@ -734,6 +744,7 @@ service vendor.port-bridge /vendor/bin/port-bridge
 on charger
     setprop persist.sys.usb.config mass_storage
     load_system_props
+    start qcom-post-boot
 
 on property:vendor.display.lcd_density=*
     setprop ro.sf.lcd_density ${vendor.display.lcd_density}
