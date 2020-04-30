@@ -88,13 +88,11 @@ etc/camera/imx351_htc_chromatix.xml
 etc/camera/ov12890eco_htc_chromatix.xml
 etc/camera/ov12890_htc_chromatix.xml
 etc/camera/s5k4e6_htc_chromatix.xml
-
 vendor/lib64/libawb_calibration.so
 vendor/lib/hw/camera.msm8996.so
 vendor/lib/libawb_calibration.so
 vendor/lib/libBeautyChat.so
 vendor/lib/libcamerapp.so
-
 vendor/lib/libcppf.so
 vendor/lib/libflash_pmic.so
 vendor/lib/libjni_dualcamera.so
@@ -983,11 +981,7 @@ vendor/lib64/libvoice-svc.so
 
 #IMS - Mata QP1A.190711.107
 -priv-app/ims/ims.apk|0f1e907bb3a0c2631f54310860711aa955710bfc
-
-#IMS - Taimen QPP6.190730.005
-vendor/bin/imsrcsd|afeb8ba71b688dec5ca8f0c47ded9bf8b675dbf8
-vendor/lib/lib-imsrcs.so|e5d66f60b8c4d3eae7fce3d57a004c774acd78ab
-vendor/lib64/lib-imsrcs.so|dc5ca0274b6e7eef47ac4979ef5774de22fe095e
+vendor/bin/imsrcsd|3d36b51928bb0e3190bda0a58d718456cb9b5ca4
 
 # Sensors
 vendor/etc/sensors/sensor_def_qcomdev.conf
@@ -1062,49 +1056,3 @@ vendor/firmware/widevine.b05|e33e45e86a113960ee9f5177765a2e2600022309
 vendor/firmware/widevine.b06|b3edf85b2966de96911297a3b639911ffcdc3584
 vendor/firmware/widevine.mbn|5356712b2a84690c04a8826a953364204eec9ff6
 vendor/firmware/widevine.mdt|f2850975428d8e1cf4faa91398422a64ef207825
-
-# Wi-Fi Display
-bin/wfdservice
-etc/init/wfdservice.rc
-etc/wfdconfig.xml
-etc/wfdconfigsink.xml
--framework/WfdCommon.jar
-lib/com.qualcomm.qti.wifidisplayhal@1.0.so
-lib64/extractors/libmmparser.so
-lib64/libFileMux.so
-lib64/libmmparser_lite.so
-lib64/libmmosal.so
-lib64/libwfdclient.so
-lib64/libwfdnative.so
-lib/extractors/libmmparser.so
-lib/libFileMux.so
-lib/libmmparser_lite.so
-lib/libmmosal.so
-lib/libmmrtpdecoder.so
-lib/libmmrtpencoder.so
-lib/libOmxMux.so
-lib/libwfdavenhancements.so
-lib/libwfdcodecv4l2.so
-lib/libwfdcommonutils.so
-lib/libwfdconfigutils.so
-lib/libwfdmminterface.so
-lib/libwfdmmsink.so
-lib/libwfdmmsrc.so
-lib/libwfdrtsp.so
-lib/libwfdservice.so
-lib/libwfdsm.so
-lib/libwfduibcinterface.so
-lib/libwfduibcsink.so
-lib/libwfduibcsinkinterface.so
-lib/libwfduibcsrc.so
-lib/libwfduibcsrcinterface.so
--priv-app/WfdService/WfdService.apk
-vendor/bin/wifidisplayhalservice
-vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
-vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so
-vendor/lib/libwfdcommonutils_proprietary.so
-vendor/lib/libwfdhaldsmanager.so
-vendor/lib/libwfdhdcpcp.so
-vendor/lib/libwfdmmservice.so
-vendor/lib/libwfdmodulehdcpsession.so
-vendor/lib64/libwfdhdcpcp.so
