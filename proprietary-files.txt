@@ -812,6 +812,11 @@ vendor/lib64/libhtc_common.so
 # NFC
 vendor/firmware/libpn551_fw.so:vendor/lib/libpn551_fw.so
 
+# NFC - SmartcardService
+-priv-app/SmartcardService/SmartcardService.apk|a30934e0fc5adac900b54bcae9b09ac8dbdae8be
+etc/permissions/org.simalliance.openmobileapi.xml|2106c9a80cb2b7a19164b21f1d3fe3a83b78ce46
+framework/org.simalliance.openmobileapi.jar|dc8a7ae9bc992ead88f5fde8bb65f53ad277a648
+
 # Network
 -priv-app/QtiTetherService/QtiTetherService.apk
 vendor/lib64/libconnctrl.so
