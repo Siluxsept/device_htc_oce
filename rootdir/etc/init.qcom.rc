@@ -49,6 +49,9 @@ on early-init
     symlink /dev/pn544 /dev/pn54x
 
 on init
+    # Set permissions for persist partition
+    mkdir /mnt/vendor/persist 0771 root system
+
     # Create cgroup mount point for memory
     mkdir /sys/fs/cgroup/memory/bg 0750 root system
     write /sys/fs/cgroup/memory/bg/memory.swappiness 140
@@ -77,6 +80,14 @@ on post-fs
     restorecon_recursive /cota
     chown system system /preload
     chmod 0771 /preload
+    chown oem_5007 oem_5007 /vzwqualitylogger
+    chmod 0770 /vzwqualitylogger
+    chown oem_5007 oem_5007 /vzw
+    chown oem_5007 oem_5007 /vzw/quality
+    chmod 0775 /vzw
+    chmod 0775 /vzw/quality
+    restorecon_recursive /vzw
+    restorecon_recursive /vzwqualitylogger
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -299,6 +310,10 @@ on post-fs-data
     # NFC permissions
     chmod 0666 /dev/pn544
     chown nfc nfc /dev/pn544
+    # Felica++
+    # permissions for Felica
+    chmod 0600 /dev/cxd224x-i2c
+    chown nfc nfc /dev/cxd224x-i2c
 
     symlink /mnt/vendor/persist/tee/00000000.authtokcont.backup /data/misc/mcRegistry/00000000.authtokcont.backup
     export MC_AUTH_TOKEN_PATH /data/misc/mcRegistry
@@ -345,6 +360,9 @@ on post-fs-data
     # HTC_WIFI_START
     # Create the directory to save host/fw/pkt log
     mkdir /data/wifi_log 0777 wifi wifi
+    # Create the directory to save brcm wifi log
+    mkdir /data/wifi_log/brcm_mem_dump_fw 0777 wifi wifi
+    mkdir /data/wifi_log/brcm_mem_dump_bg 0777 wifi wifi
     # HTC_WIFI_END
 
     #create port-bridge log dir
