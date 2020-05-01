@@ -226,10 +226,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
 
-# FlipFlap
-PRODUCT_PACKAGES += \
-    FlipFlap
-
 # fwk-detect
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect
