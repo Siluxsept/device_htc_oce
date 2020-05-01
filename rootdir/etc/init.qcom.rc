@@ -623,15 +623,15 @@ service vendor.dpmQmiMgr /vendor/bin/dpmQmiMgr
     user system
     group radio system
 
-service perfd /vendor/bin/perfd
+service vendor.perfd /vendor/bin/perfd
     class main
     user root
     group root system
     writepid /dev/cpuset/system-background/tasks
     disabled
 
-on property:sys.post_boot.parsed=1
-    start perfd
+on property:vendor.post_boot.parsed=1
+    start vendor.perfd
 
 service vendor.dataqti /vendor/bin/qti
     class main
