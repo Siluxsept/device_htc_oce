@@ -38,7 +38,6 @@
 #include <fcntl.h>
 #include <dlfcn.h>
 #include <stdlib.h>
-#include <unistd.h>
 
 #include <log/log.h>
 
@@ -48,7 +47,9 @@
 #define RPM_SYSTEM_STAT "/d/system_stats"
 #endif
 
-#define TAP_TO_WAKE_NODE "/sys/devices/virtual/htc_sensorhub/sensor_hub/gesture_motion"
+#ifndef WLAN_POWER_STAT
+#define WLAN_POWER_STAT "/d/wlan0/power_stats"
+#endif
 
 #define ARRAY_SIZE(x) (sizeof((x))/sizeof((x)[0]))
 #define LINE_SIZE 128
@@ -72,46 +73,17 @@ struct stat_pair rpm_stat_map[] = {
     { VOTER_SLPI,    "SLPI",    master_stat_params, ARRAY_SIZE(master_stat_params) },
 };
 
-static int sysfs_write(char *path, char *s)
-{
-    char buf[80];
-    int len;
-    int ret = 0;
-    int fd = open(path, O_WRONLY);
 
-    if (fd < 0) {
-        strerror_r(errno, buf, sizeof(buf));
-        ALOGE("Error opening %s: %s\n", path, buf);
-        return -1 ;
-    }
+const char *wlan_power_stat_params[] = {
+    "cumulative_sleep_time_ms",
+    "cumulative_total_on_time_ms",
+    "deep_sleep_enter_counter",
+    "last_deep_sleep_enter_tstamp_ms"
+};
 
-    len = write(fd, s, strlen(s));
-    if (len < 0) {
-        strerror_r(errno, buf, sizeof(buf));
-        ALOGE("Error writing to %s: %s\n", path, buf);
-
-        ret = -1;
-    }
-
-    close(fd);
-
-    return ret;
-}
-
-void __attribute__((weak)) set_device_specific_feature(__unused feature_t feature, __unused int state)
-{
-}
-
-void set_feature(feature_t feature, int state) {
-    switch (feature) {
-        case POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
-            sysfs_write(TAP_TO_WAKE_NODE, state ? "1" : "0");
-            break;
-        default:
-            break;
-    }
-    set_device_specific_feature(feature, state);
-}
+struct stat_pair wlan_stat_map[] = {
+    { WLAN_POWER_DEBUG_STATS, "POWER DEBUG STATS", wlan_power_stat_params, ARRAY_SIZE(wlan_power_stat_params) },
+};
 
 static int parse_stats(const char **params, size_t params_size,
                        uint64_t *list, FILE *fp) {
@@ -197,4 +169,8 @@ static int extract_stats(uint64_t *list, char *file,
 
 int extract_platform_stats(uint64_t *list) {
     return extract_stats(list, RPM_SYSTEM_STAT, rpm_stat_map, ARRAY_SIZE(rpm_stat_map));
+}
+
+int extract_wlan_stats(uint64_t *list) {
+    return extract_stats(list, WLAN_POWER_STAT, wlan_stat_map, ARRAY_SIZE(wlan_stat_map));
 }

@@ -93,7 +93,6 @@
 # Init
 /(vendor|system/vendor)/bin/init\.htc\.fp\.sh   u:object_r:htc-fp_exec:s0
 /(vendor|system/vendor)/bin/init\.foreground\.sh   u:object_r:foreground_sh_exec:s0
-/(vendor|system/vendor)/bin/perfd   u:object_r:perfd_exec:s0
 
 # LEDs
 /sys/class/leds(/.*)?                       u:object_r:sysfs_class_leds:s0

@@ -42,6 +42,8 @@ using PowerHint_1_0 = ::android::hardware::power::V1_0::PowerHint;
 using PowerHint_1_2 = ::android::hardware::power::V1_2::PowerHint;
 using ::android::perfmgr::HintManager;
 
+constexpr char kPowerHalStateProp[] = "vendor.powerhal.state";
+constexpr char kPowerHalAudioProp[] = "vendor.powerhal.audio";
 constexpr char kPowerHalInitProp[] = "vendor.powerhal.init";
 
 struct Power : public IPower {
@@ -62,13 +64,16 @@ struct Power : public IPower {
     Return<void> powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) override;
 
     // Methods from ::android::hidl::base::V1_0::IBase follow.
+    Return<void> debug(const hidl_handle& fd, const hidl_vec<hidl_string>& args) override;
 
  private:
     static bool isSupportedGovernor();
 
     std::shared_ptr<HintManager> mHintManager;
     std::unique_ptr<InteractionHandler> mInteractionHandler;
+    std::atomic<bool> mVRModeOn;
     std::atomic<bool> mSustainedPerfModeOn;
+    std::atomic<bool> mEncoderModeOn;
     std::atomic<bool> mReady;
     std::thread mInitThread;
 };

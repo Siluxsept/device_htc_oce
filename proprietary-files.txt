@@ -824,7 +824,6 @@ vendor/lib64/libQtiTether.so
 vendor/etc/perf-profile0.conf|02204355bf29ceb0460cd53e6716552bb9d9b05f
 vendor/lib64/libqti-perfd-client.so|b7f69e6428e865d4aa552320a91d974939848312
 vendor/lib/libqti-perfd-client.so|7b83c3b54cb416b6ccb34cce831319c62c30b3ff
-vendor/bin/perfd|2c1ce86418e7001e3cdcfbd3b68acc60470c6c79
 
 # Peripheral manager
 vendor/bin/pm-proxy
@@ -841,6 +840,9 @@ vendor/lib64/vendor.display.color@1.0.so|26e35e9283f242bc7771bd40fbfbb0d95ef8951
 vendor/lib64/vendor.display.color@1.1.so|88fd94a85552a0d8c13f363541c5a5b8933ea1f2
 vendor/lib64/vendor.display.color@1.2.so|4c8662c993e4af6df2d6ebc4101caee0d629e0d2
 vendor/lib64/vendor.display.postproc@1.0.so|40910c332df5288c60bae04f99747c526b5499bd
+
+# Power
+vendor/etc/powerhint.xml|cf553ac5b60802af2b7b0ff62470decbd765c6d5
 
 # Power-off alarm - from daisy 9/PKQ1.180917.001/V10.0.7.0.PDLMIXM
 vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|c9877b6cae0353d5fdea5bc23dba77101b3d6980

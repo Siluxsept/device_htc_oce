@@ -93,15 +93,6 @@ on late-init
     setprop sys.usb.configfs 1
 # HTC USB --
 
-on late-fs
-    # boot time fs tune
-    write /sys/block/sda/queue/iostats 0
-    write /sys/block/sda/queue/iosched/slice_idle 0
-    write /sys/block/sda/queue/read_ahead_kb 2048
-    write /sys/block/sda/queue/nr_requests 256
-    write /sys/block/dm-0/queue/read_ahead_kb 2048
-    write /sys/block/dm-1/queue/read_ahead_kb 2048
-
 on post-fs-data
     # Create oemnvitems for RIL
     mkdir /data/vendor/oemnvitems 0771 radio radio
@@ -210,6 +201,26 @@ on boot
 
     # Wifi firmware reload path
     chown wifi wifi /sys/module/bcmdhd/parameters/firmware_path
+
+    # set diag permissions
+    chmod 0660 /dev/htc_diag
+    chmod 0660 /dev/diag
+    chmod 0660 /dev/diag_mdm
+    chmod 0660 /dev/htcdiag
+    chmod 0660 /dev/diag_arm9
+    chmod 0660 /dev/btdiag
+    chmod 0660 /dev/diag_qsc
+    chown radio qcom_diag /dev/htc_diag
+    chown radio oem_2901 /dev/diag
+    chown radio qcom_diag /dev/diag_mdm
+    chown radio oem_2901 /dev/htcdiag
+    chown radio oem_2901 /dev/diag_arm9
+    chown radio qcom_diag /dev/btdiag
+    chown radio qcom_diag /dev/diag_qsc
+    chown system system /sys/devices/platform/android_usb/lock_speed
+    chown system system /sys/devices/platform/android_usb/usb_disable
+    chown system radio /sys/devices/platform/android_usb/hcmd
+    chown system radio /sys/devices/platform/android_usb/usb_modem_enable
 
     ####Regionalization config and prop files####
     chmod 0644 /mnt/vendor/persist/speccfg/spec
