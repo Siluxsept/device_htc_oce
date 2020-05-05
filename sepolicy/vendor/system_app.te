@@ -9,3 +9,4 @@ allow system_app sysfs_headphone_gain:file rw_file_perms;
 allow system_app sysfs_zram:dir r_dir_perms;
 allow system_app sysfs_gesture:file rw_file_perms;
 allow system_app rootfs:dir r_dir_perms;
+allow system_app sysfs:file write;
