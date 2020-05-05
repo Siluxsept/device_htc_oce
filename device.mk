@@ -288,7 +288,6 @@ PRODUCT_PACKAGES += \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.recovery.qcom.rc \
-    init.foreground.sh \
     init.target.rc \
     init.oce.rc \
     init.qcom.power.rc \
