@@ -163,11 +163,11 @@ on enable-low-power
 
     # Min/Max Freqs
     chmod 755 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1593600
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1996200
     chmod 755 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
     chmod 755 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2150400
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2342400
     chmod 755 /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307200
 
@@ -205,13 +205,19 @@ on enable-low-power
     # Re-enable thermal and BCL hotplug
     write /sys/module/msm_thermal/core_control/enabled 1
 
+    # Disable touch boost
+    write /sys/module/msm_performance/parameters/touchboost 0
+
     # Input boost configuration
     write /sys/module/cpu_boost/parameters/input_boost_enabled 0
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:0 2:0"
     write /sys/module/cpu_boost/parameters/input_boost_ms 0
 
+    # Dynamic SchedTune Boost
+    write /sys/module/cpu_boost/parameters/dynamic_stune_boost 0
+
     # Setting b.L scheduler parameters
-    write /proc/sys/kernel/sched_boost 0
+    write /proc/sys/kernel/sched_migration_fixup 1
     write /proc/sys/kernel/sched_upmigrate 95
     write /proc/sys/kernel/sched_downmigrate 90
     write /proc/sys/kernel/sched_freq_inc_notify 400000
@@ -258,11 +264,11 @@ on enable-low-power
 on property:sys.boot_completed=1
     trigger enable-low-power
 
-    # Enable PowerHAL hint processing
-    setprop vendor.powerhal.init 1
+    # Disable PowerHAL hint processing
+    setprop vendor.powerhal.init 0
 
     # Set I/O squeduler
-    setprop sys.io.scheduler "cfq"
+    setprop sys.io.scheduler "anxiety"
 
     # Set GPU idle frequency to 133 MHz
     write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 6
