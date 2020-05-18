@@ -1,2 +1,5 @@
 allow hal_graphics_composer_default sysfs_class_leds:dir r_dir_perms;
 allow hal_graphics_composer_default sysfs_class_leds:lnk_file r_file_perms;
+allow hal_graphics_composer_default persist_block_device:dir r_dir_perms;
+allow hal_graphics_composer_default sysfs_msm_subsys:dir r_dir_perms;
+allow hal_graphics_composer_default perfd_data_file:dir r_dir_perms;

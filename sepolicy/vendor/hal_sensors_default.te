@@ -5,3 +5,6 @@ allow hal_sensors_default vendor_data_file:file { create_file_perms rw_file_perm
 allow hal_sensors_default uhid_device:chr_file { ioctl open write };
 allow hal_sensors_default sensors_device:chr_file { open read write };
 allow hal_sensors_default nanohub_lock_file:dir r_dir_perms;
+allow hal_sensors_default persist_block_device:dir r_dir_perms;
+allow hal_sensors_default vendor_sensor_data_file:dir r_dir_perms;
+allow hal_sensors_default vendor_sensor_data_file:file rw_file_perms;

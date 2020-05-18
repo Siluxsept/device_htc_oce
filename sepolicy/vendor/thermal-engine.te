@@ -3,3 +3,7 @@ allow thermal-engine sysfs:file { getattr open read write};
 allow thermal-engine sysfs:dir { open read };
 allow thermal-engine sysfs_class_leds:dir r_dir_perms;
 allow thermal-engine sysfs_class_leds:lnk_file r_file_perms;
+allow thermal-engine sysfs_batteryinfo:file r_file_perms;
+allow thermal-engine sysfs_msm_subsys:dir r_dir_perms;
+allow thermal-engine sysfs_batteryinfo:dir r_dir_perms;
+allow thermal-engine sysfs_msm_subsys:file rw_file_perms;

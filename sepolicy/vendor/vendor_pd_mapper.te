@@ -1,2 +1,4 @@
 allow vendor_pd_mapper sysfs:file { open read };
 allow vendor_pd_mapper vendor_file:dir { open read };
+allow vendor_pd_mapper sysfs_msm_subsys:dir r_dir_perms;
+allow vendor_pd_mapper sysfs_msm_subsys:file r_file_perms;

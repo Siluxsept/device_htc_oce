@@ -7,3 +7,12 @@ mfg.calibration.status              u:object_r:sensors_prop:s0
 wifi.active.interface               u:object_r:wifi_prop:s0
 rild.libpath                        u:object_r:vendor_rild_libpath_prop:s0
 rild.vendor.libpath                        u:object_r:vendor_rild_libpath_prop:s0
+sensors.                            u:object_r:sensors_prop:s0
+radio.                              u:object_r:radio_prop:s0
+rcs.publish.status                  u:object_r:radio_prop:s0
+sys.qcom.thermalcfg                 u:object_r:thermal_prop:s0
+vendor.thermal.config               u:object_r:thermal_prop:s0
+ctl.vendor.thermal-engine           u:object_r:thermal_prop:s0
+sys.time.set                        u:object_r:sys_time_prop:s0
+sys.post_boot.parsed                u:object_r:post_boot_prop:s0
+persist.vendor.charge.              u:object_r:vendor_charge_prop:s0

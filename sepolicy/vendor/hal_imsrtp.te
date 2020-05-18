@@ -1,1 +1,3 @@
 allow hal_imsrtp sysfs:file { open read };
+allow hal_imsrtp sysfs_msm_subsys:dir r_dir_perms;
+allow hal_imsrtp sysfs_msm_subsys:file r_file_perms;

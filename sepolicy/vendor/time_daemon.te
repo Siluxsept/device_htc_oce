@@ -1,1 +1,4 @@
 allow time_daemon sysfs:file { open read };
+allow time_daemon persist_block_device:dir r_dir_perms;
+allow time_daemon sysfs_msm_subsys:dir r_dir_perms;
+allow time_daemon sysfs_msm_subsys:file r_file_perms;

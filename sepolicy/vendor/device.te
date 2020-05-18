@@ -1,3 +1,6 @@
 type fpc1155_device, dev_type;
 type carrier_block_device, dev_type;
 type dsp_block_device, dev_type;
+type adsprpcd_device, dev_type;
+type sdsprpc_device, dev_type;
+type audio_cal_device, dev_type;

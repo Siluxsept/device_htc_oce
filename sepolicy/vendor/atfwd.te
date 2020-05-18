@@ -1,1 +1,3 @@
 allow atfwd sysfs:file { open read };
+allow atfwd sysfs_msm_subsys:dir r_dir_perms;
+allow atfwd sysfs_msm_subsys:file r_file_perms;

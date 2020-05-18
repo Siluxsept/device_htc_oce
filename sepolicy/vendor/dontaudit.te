@@ -131,5 +131,4 @@ dontaudit flags_health_check vendor_xlat_prop:file *;
 dontaudit flags_health_check wifi_prop:file *;
 
 dontaudit fsck_untrusted vold_device:blk_file ioctl;
-dontaudit rild carrier_file:file ioctl;
 dontaudit fsck mnt_vendor_file:dir getattr;

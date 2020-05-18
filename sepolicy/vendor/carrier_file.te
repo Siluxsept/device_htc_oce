@@ -1,2 +1,0 @@
-allow carrier_file rootfs:filesystem associate;
-allow carrier_file labeledfs:filesystem associate;

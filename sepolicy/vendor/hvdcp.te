@@ -1,1 +1,5 @@
 allow hvdcp sysfs:file { open read };
+allow hvdcp sysfs_batteryinfo:dir r_dir_perms;
+allow hvdcp sysfs_batteryinfo:file r_file_perms;
+allow hvdcp sysfs_msm_subsys:dir r_dir_perms;
+allow hvdcp sysfs_msm_subsys:file r_file_perms;

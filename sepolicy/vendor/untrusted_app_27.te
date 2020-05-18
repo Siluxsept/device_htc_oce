@@ -1,3 +1,5 @@
 allow untrusted_app_27 sysfs_kgsl:file r_file_perms;
 allow untrusted_app_27 sysfs_kgsl_proc:dir r_dir_perms;
-allow untrusted_app_27 persist_camera_prop:file r_file_perms;
+allow untrusted_app_27 persist_camera_prop:file read;
+allow untrusted_app_27 sysfs_msm_subsys:dir r_dir_perms;
+allow untrusted_app_27 sysfs_msm_subsys:file r_file_perms;

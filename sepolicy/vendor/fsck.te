@@ -2,5 +2,7 @@ allow fsck tmpfs:blk_file getattr;
 allow fsck firmware_file:filesystem getattr;
 allow fsck cache_file:dir getattr;
 allow fsck block_device:blk_file ioctl;
-allow fsck carrier_block_device:blk_file { open read };
+allow fsck carrier_block_device:blk_file { ioctl open read write };
+allow fsck carrier_block_device:dir r_dir_perms;
 allow fsck dsp_block_device:blk_file { ioctl open read write };
+allow fsck persist_block_device:dir r_dir_perms;

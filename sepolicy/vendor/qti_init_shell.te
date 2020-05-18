@@ -7,6 +7,5 @@ allow qti_init_shell radio_data_file:dir r_dir_perms;
 allow qti_init_shell radio_data_file:file rw_file_perms;
 allow qti_init_shell sysfs:file setattr;
 allow qti_init_shell fingerprint_prop:property_service set;
-allow qti_init_shell carrier_file:file getattr;
 allow qti_init_shell system_data_file:file open;
 allow qti_init_shell shell_exec:file { execute getattr read };

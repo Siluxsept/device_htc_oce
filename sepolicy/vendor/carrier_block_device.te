@@ -1,0 +1,1 @@
+allow carrier_block_device labeledfs:filesystem associate;
