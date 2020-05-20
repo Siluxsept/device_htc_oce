@@ -213,13 +213,6 @@
     -->
     <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
 
-    <!-- Indicate whether to allow the device to suspend when the screen is off
-         due to the proximity sensor.  This resource should only be set to true
-         if the sensor HAL correctly handles the proximity sensor as a wake-up source.
-         Otherwise, the device may fail to wake out of suspend reliably.
-         The default is false. -->
-    <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
-
 	<!-- Control the behavior when the user long presses the home button.
             0 - Nothing
             1 - Menu key
@@ -372,8 +365,8 @@
 
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">false</bool>
-	
-	    <!-- The bounding path of the cutout region of the main built-in display.
+
+    <!-- The bounding path of the cutout region of the main built-in display.
          Must either be empty if there is no cutout region, or a string that is parsable by
          {@link android.util.PathParser}.
          The path is assumed to be specified in display coordinates with pixel units and in
@@ -429,9 +422,6 @@
     <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
     <bool name="config_custom_swipe_up_gesture_setting_available">true</bool>
 
-    <!-- Smart Pixels -->
-    <bool name="config_enableSmartPixels">true</bool>
-
     <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
     <bool name="config_cleanupUnusedFingerprints">false</bool>
 
@@ -444,31 +434,25 @@
 
     <!-- Blank the display when transitioning from dozing to non-dozing state -->
     <bool name="config_displayBlanksAfterDoze">false</bool>
-    
-    <!-- Indicate whether closing the lid causes the device to go to sleep and opening
-         it causes the device to wake up.
-         The default is false. -->
-    <bool name="config_lidControlsSleep">true</bool>
-    
+
     <!-- Does the device supports Smart Battery -->
     <bool name="config_smart_battery_available">true</bool>
-    
+
     <!-- Default state for LiveDisplay -->
     <bool name="config_liveDisplayAvailable">true</bool>
-    
+
     <!-- Disable rounded corners on windows to improve graphics performance -->
     <bool name="config_supportsRoundedCornersOnWindows">false</bool>
 
     <!-- Whether device ignores the RSSNR signal implementation -->
     <bool name="config_ignoreRssnrSignalLevel">true</bool>
-    
+
     <!-- Whether device supports pickupsensor for AD pulse -->
     <bool name="config_dozePulsePickup">true</bool>
     <!-- Whether device supports wake screen gesture for AD pulse -->
     <bool name="config_dozeWakeLockScreenSensorAvailable">true</bool>
     <!-- Whether device supports sensor based doze customizations -->
     <bool name="config_dozePulseTilt">true</bool>
-    <bool name="config_dozePulseProximity">true</bool>
 
     <!-- increase notifications on statusbar -->
     <integer name="config_maxVisibleNotificationIcons">5</integer>
@@ -485,4 +469,26 @@
 
     <!-- we don't have a menu key -->
     <integer name="config_overrideHasPermanentMenuKey">2</integer>
+
+    <!-- Is the device capable of hot swapping an ICC Card -->
+    <bool name="config_hotswapCapable">true</bool>
+
+    <!-- Config determines whether to update phone object when voice registration
+    state changes. Voice radio tech change will always trigger an update of
+    phone object irrespective of this config -->
+    <bool name="config_switch_phone_on_voice_reg_state_change">false</bool>
+    <!--  Define Google play service package for FRP-->
+    <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
+
+    <!-- Whether the Unprocessed audio source supports the required frequency range and level -->
+    <bool name="config_supportAudioSourceUnprocessed">true</bool>
+
+    <!-- Boolean indicating if current platform supports HFP inband ringing -->
+    <bool name="config_bluetooth_hfp_inband_ringing_support">true</bool>
+
+    <!-- Specifies whether to decouple the auto-suspend state of the device from the display on/off state. -->
+    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+
+    <!-- If true, the display will be shifted around in ambient mode. -->
+    <bool name="config_enableBurnInProtection">true</bool>
 </resources>
