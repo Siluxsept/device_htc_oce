@@ -81,6 +81,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.use_data_netmgrd=true \
+    persist.vendor.data.iwlan.enable=true \
     persist.vendor.data.mode=concurrent
 
 # Default pd_enable value
