@@ -368,6 +368,7 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     NfcNci \
     SecureElement \
+    SmartcardService \
     android.hardware.secure_element@1.0 \
     Tag
 
