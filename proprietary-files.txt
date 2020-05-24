@@ -1037,18 +1037,20 @@ vendor/lib/libwfdhdcpcp.so|e459d08d32b9d93f498413172625861d3cc08c5c
 vendor/lib/libwfdmmservice.so|f4fcd4b9af63d5c4f352240fd040dcabb74ec22f
 vendor/lib/libwfdmodulehdcpsession.so|b252efdbd4669ed6e8db7d5f77999c9bb5b0b9c4
 
-# Widevine DRM - Marlin - 9.0.0 (PPR2.181005.003, Oct 2018)
-vendor/bin/hw/android.hardware.drm@1.0-service.widevine|fd6e14710c196fdd4131afe2ce10c4a5be1b309c
-vendor/etc/init/android.hardware.drm@1.0-service.widevine.rc|51a3168a0dbc064d78ee11ca83614c0cd2e6daa5
-vendor/lib/libwvhidl.so|f7288f7a7ed6765bd1d80d639a0aeb0c31eda795
+# Widevine DRM - Marlin - QP1A.191005.007.A3
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine|47426bdd9f3ba6260dbcc671c93078108d8caba9
+vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|5a01d337c1d375ee24a6c8992ba91f54afb7637e
+vendor/lib/libwvhidl.so|c7fd1e7c67b1f07f0dabed5a7f83c6a096da844c
+vendor/lib64/libwvhidl.so|9472489f154c0c55c8cfc00f7f67dd152182dfae
+vendor/lib/liboemcrypto.so|a3982e25f74008999341133a8669e9a411da56e2
+bin/move_widevine_data.sh|2dab3e4e861d5cddd293e78bfb1223b0adbd7fa6
 
-# Widevine firmware - Marlin - 9.0.0 (PPR2.181005.003, Oct 2018)
-vendor/firmware/widevine.b00|e9613fee8d03b152dd66f667feb493775da995ca
-vendor/firmware/widevine.b01|fa1d61219139f3e8b00e3385270c8f947f13b183
-vendor/firmware/widevine.b02|e0808c16f39c6871a145669b57261546b5332d41
-vendor/firmware/widevine.b03|bfb0635f0af502f92e163bac4a59eedf7e1373d9
-vendor/firmware/widevine.b04|1e3588d293f9ac32a007d46edc9e8bcc360d897a
-vendor/firmware/widevine.b05|e33e45e86a113960ee9f5177765a2e2600022309
-vendor/firmware/widevine.b06|b3edf85b2966de96911297a3b639911ffcdc3584
-vendor/firmware/widevine.mbn|5356712b2a84690c04a8826a953364204eec9ff6
-vendor/firmware/widevine.mdt|f2850975428d8e1cf4faa91398422a64ef207825
+# Widevine firmware - Marlin - QP1A.191005.007.A3
+vendor/firmware/widevine.b00|05c2f230e613b7a42c7e2cc03765565159632f40
+vendor/firmware/widevine.b01|65c189b73cdde4735174848f14ae4fd10fa4bea8
+vendor/firmware/widevine.b02|37649c8e87ef255116d55c3a2c1d9dd2074eed2b
+vendor/firmware/widevine.b03|716476f348b06e3f104e65ef7c7b3762413a1aae
+vendor/firmware/widevine.b04|d75c72fc1f5799924ebfc62de55e838f689182c7
+vendor/firmware/widevine.b05|ca874714bceff39ef3093547b2fd96984c400785
+vendor/firmware/widevine.b06|ad095862c1ac3e4bc14885b4e04b33e6eed398f3
+vendor/firmware/widevine.mdt|75be2d4002b57f66db8b529448f64c0b9702d0bf
