@@ -175,6 +175,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.telephony.mqanelements=5 \
     persist.vendor.radio.apm_sim_not_pwdn=0 \
     persist.vendor.radio.apm_mdm_not_pwdn=1 \
+    persist.vendor.radio.aosp_usr_pref_sel=true \
     persist.vendor.radio.cs_srv_type=1 \
     persist.vendor.radio.snapshot_timer=0 \
     persist.vendor.radio.data_ltd_sys_ind=1 \
