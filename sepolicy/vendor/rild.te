@@ -6,7 +6,7 @@ allow rild vendor_carrier_file:file { ioctl getattr lock open read };
 allow rild vendor_carrier_file:dir { search add_name open read remove_name };
 allow rild shell_exec:file execute_no_trans;
 allow rild unlabeled:dir { add_name open read remove_name search write };
-allow rild unlabeled:file { ioctl open read write getattr lock unlink};
+allow rild unlabeled:file { ioctl open read write getattr lock unlink execute create  };
 allow rild carrier_block_device:dir { add_name open read remove_name search write };
 allow rild carrier_block_device:file { execute create ioctl open read write getattr lock unlink};
 
