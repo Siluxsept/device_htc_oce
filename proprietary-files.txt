@@ -763,8 +763,8 @@ vendor/bin/hvdcp_opti
 # HTC Network
 system/bin/htcnetd
 
-# IPA
-vendor/bin/ipacm-diag
+# IPA - from daisy - xiaomi/daisy/daisy_sprout:10/QKQ1.191002.002/V11.0.7.0.QDLMIXM
+vendor/bin/ipacm-diag|f08be0dfb0cedecfdf8fae261a3b06f416b56dc2
 
 # Keymaster
 vendor/firmware/keymaste.b00
