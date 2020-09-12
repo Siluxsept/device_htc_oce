@@ -34,7 +34,6 @@
 #include <android-base/properties.h>
 
 #include "vendor_init.h"
-#include "property_service.h"
 
 /* Device specific properties */
 #include "htc-dtwl.h"
@@ -45,7 +44,7 @@
 #include "htc-uhl.h"
 
 using android::base::GetProperty;
-using android::init::property_set;
+using ::android::base::SetProperty;
 
 static void load_properties(const char *original_data)
 {
@@ -80,7 +79,7 @@ static void load_properties(const char *original_data)
 
         while (isspace(*value)) value++;
 
-        property_set(key, value);
+        SetProperty(key, value);
     }
 
     free(data);
