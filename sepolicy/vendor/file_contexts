@@ -70,6 +70,9 @@
 # Encryption
 /cache/recovery/uncrypt_file        u:object_r:cache_recovery_file:s0
 
+# Dumpstate HAL
+/vendor/bin/hw/android\.hardware\.dumpstate@1\.1-service\.oce u:object_r:hal_dumpstate_impl_exec:s0
+
 # Fastcharge
 /sys/kernel/fast_charge/force_fast_charge   u:object_r:sysfs_fastcharger:s0
 
