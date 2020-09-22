@@ -191,11 +191,15 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.power</name>
+        <name>vendor.lineage.touch</name>
         <transport>hwbinder</transport>
-        <version>1.2</version>
+        <version>1.0</version>
         <interface>
-            <name>IPower</name>
+            <name>IKeyDisabler</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ITouchscreenGesture</name>
             <instance>default</instance>
         </interface>
     </hal>
