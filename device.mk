@@ -217,6 +217,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.3-service.clearkey
 
+# DumpState
+PRODUCT_PACKAGES += \
+    android.hardware.dumpstate@1.1-service-oce
+
 # Enable Codec 2.0
 PRODUCT_PACKAGES += \
     libstagefright_ccodec
