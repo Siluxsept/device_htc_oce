@@ -936,6 +936,9 @@ vendor/lib64/libqmiservices.so
 vendor/lib64/libqmiservices_ext.so
 vendor/lib64/libsmemlog.so
 
+# Radio qti-telephony-common | Xiaomi cmi qssi-user-11-RKQ1.200710.002-V12.1.2.0.RJACNXM
+system_ext/framework/qti-telephony-common.jar|98951c48563c5846a58c9a3c4c254f32d0741f36
+
 # Radio
 vendor/bin/netmgrd
 vendor/bin/radish
@@ -966,7 +969,6 @@ vendor/qcril.db
 
 # Radio - IMS
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml|54098d7c95453d662267d833b3639a7c92021a73
-product/framework/qti-telephony-common.jar|532af9b997feab1f71c3a6457d14b7bec22fe6b6
 -product/priv-app/ims/ims.apk|426be1b83d6f608107d6dcf587080551abeab3e2
 vendor/bin/ims_rtp_daemon|08556e7da3872ca6deea33494bac5f86e9024891
 vendor/bin/imscmservice|9e68f7f3664b8f44c6c5ffe8d0598896eedf4f9b
