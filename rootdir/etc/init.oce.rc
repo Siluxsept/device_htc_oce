@@ -205,13 +205,13 @@ on boot
     chmod 0660 /dev/diag_arm9
     chmod 0660 /dev/btdiag
     chmod 0660 /dev/diag_qsc
-    chown radio qcom_diag /dev/htc_diag
+    chown radio diag  /dev/htc_diag
     chown radio oem_2901 /dev/diag
-    chown radio qcom_diag /dev/diag_mdm
+    chown radio diag  /dev/diag_mdm
     chown radio oem_2901 /dev/htcdiag
     chown radio oem_2901 /dev/diag_arm9
-    chown radio qcom_diag /dev/btdiag
-    chown radio qcom_diag /dev/diag_qsc
+    chown radio diag  /dev/btdiag
+    chown radio diag  /dev/diag_qsc
     chown system system /sys/devices/platform/android_usb/lock_speed
     chown system system /sys/devices/platform/android_usb/usb_disable
     chown system radio /sys/devices/platform/android_usb/hcmd
@@ -624,7 +624,7 @@ on boot
 
     # Flashlight
     chown system system /sys/class/leds/flashlight/brightness
-    chown vte    vte    /dev/vte_flt
+#    chown vte    vte    /dev/vte_flt
     chmod 0660 /dev/vte_flt
 
     # CIR
