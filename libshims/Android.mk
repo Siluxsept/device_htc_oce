@@ -23,18 +23,13 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := camera_shim.cpp
-LOCAL_MULTILIB := 32
-LOCAL_SHARED_LIBRARIES := libgui libui libutils
-LOCAL_MODULE := libshim_camera
-LOCAL_MODULE_TAGS := optional
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
+
 LOCAL_SRC_FILES := stillmore.c
 LOCAL_SHARED_LIBRARIES := libstagefright_foundation
 LOCAL_MODULE := libshim_stillmore
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE_TAGS := optional
+
 include $(BUILD_SHARED_LIBRARY)
