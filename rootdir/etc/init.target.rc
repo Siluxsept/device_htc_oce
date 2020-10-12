@@ -271,3 +271,9 @@ service htcnetd /system/bin/htcnetd
     socket htcnetd stream 0660 root inet
     user root
     disabled
+
+service energy-awareness /vendor/bin/energy-awareness
+    class main
+    user root
+    group system
+    oneshot
