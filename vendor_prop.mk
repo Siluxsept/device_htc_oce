@@ -84,6 +84,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.iwlan.enable=true \
     persist.vendor.data.mode=concurrent
 
+# Dalvik dex2oat
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat64.enabled=true
+
 # Default pd_enable value
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.pd_enable=0
