@@ -1,5 +1,0 @@
-# Allow access to sysfs
-allow kernel init:process noatsecure;
-allow kernel sysfs:file { open read write getattr };
-allow kernel vfat:dir search;
-allow kernel vfat:file open;

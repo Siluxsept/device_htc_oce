@@ -1,2 +1,0 @@
-allow system_server mm-qcamerad:binder call;
-allow system_server persist_camera_prop:file { getattr open read };

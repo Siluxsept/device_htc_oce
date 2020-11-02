@@ -1,3 +1,0 @@
-allow ims sysfs:file { open read };
-allow ims sysfs_msm_subsys:dir r_dir_perms;
-allow ims sysfs_msm_subsys:file r_file_perms;

@@ -1,2 +1,0 @@
-allow rmt_storage sysfs_rmtfs:dir search;
-allow rmt_storage qti_debugfs:file { open write };

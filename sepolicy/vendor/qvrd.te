@@ -1,2 +1,0 @@
-allow qvrd sysfs_msm_subsys:dir r_dir_perms;
-allow qvrd sysfs_msm_subsys:file r_file_perms;

@@ -1,2 +1,0 @@
-allow netd sys_virtual_rmnet:dir r_dir_perms;
-allow netd sys_virtual_rmnet:file rw_file_perms;

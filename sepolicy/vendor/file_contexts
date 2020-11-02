@@ -33,14 +33,6 @@
 /dev/block/platform/soc/624000\.ufshc/by-name/frp                        u:object_r:frp_block_device:s0
 /dev/block/bootdevice/by-name/frp                                         u:object_r:frp_block_device:s0
 
-/dev/block/platform/soc/624000\.ufshc/by-name/carrier                        u:object_r:carrier_block_device:s0
-/dev/block/bootdevice/by-name/carrier                                         u:object_r:carrier_block_device:s0
-/carrier    u:object_r:carrier_block_device:s0
-
-/dev/block/platform/soc/624000\.ufshc/by-name/dsp                        u:object_r:dsp_block_device:s0
-/dev/block/bootdevice/by-name/dsp                                         u:object_r:dsp_block_device:s0
-/dsp u:object_r:dsp_block_device:s0
-
 /dev/block/platform/soc/624000\.ufshc/by-name/extra                        u:object_r:metadata_block_device:s0
 /dev/block/bootdevice/by-name/extra                                         u:object_r:metadata_block_device:s0
 
@@ -78,8 +70,10 @@
 
 # Files in rootfs
 /bt_firmware(/.*)?       u:object_r:bt_firmware_file:s0
+/carrier(/.*)?           u:object_r:vendor_carrier_file:s0
 /crashdump.d(/.*)?       u:object_r:crashdata_data_file:s0
 /firmware(/.*)?          u:object_r:firmware_file:s0
+/persist(/.*)?           u:object_r:mnt_vendor_file:s0
 /tombstones(/.*)?        u:object_r:tombstone_data_file:s0
 
 # files in /system
