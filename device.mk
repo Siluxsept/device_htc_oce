@@ -378,6 +378,12 @@ PRODUCT_PACKAGES += \
     libregistermsext \
     mediametrics
 
+# Minijail
+PRODUCT_PACKAGES += \
+    libavservices_minijail_vendor \
+    libavservices_minijail_32 \
+    libavservices_minijail.vendor
+
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
