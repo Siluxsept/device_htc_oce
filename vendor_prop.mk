@@ -185,7 +185,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.profile_update=true \
     persist.radio.NETWORK_SWITCH=1 \
     persist.vendor.radio.add_power_save=1 \
-    persist.sys.fflag.override.settings_network_and_internet_v2=true
 
 # QCOM
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
