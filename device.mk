@@ -493,6 +493,9 @@ PRODUCT_PACKAGES += \
     nanotool \
     sensortest
 
+PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0
+
 # Tethering
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
