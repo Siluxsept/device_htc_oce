@@ -206,7 +206,7 @@ PRODUCT_PACKAGES += \
     gralloc.msm8996 \
     hwcomposer.msm8996 \
     memtrack.msm8996 \
-    libdisplayconfig \
+    libdisplayconfig.qti \
     libhwc2on1adapter \
     libgenlock \
     liboverlay \
@@ -378,9 +378,9 @@ PRODUCT_PACKAGES += \
 
 # Minijail
 PRODUCT_PACKAGES += \
-    libavservices_minijail_vendor \
-    libavservices_minijail_32 \
-    libavservices_minijail.vendor
+    libavservices_minijail \
+    libavservices_minijail.vendor \
+    libminijail
 
 # Net
 PRODUCT_PACKAGES += \
