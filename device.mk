@@ -213,6 +213,7 @@ PRODUCT_PACKAGES += \
     libqdMetaData \
     libqdMetaData.system \
     libqdMetaData.vendor \
+    libvulkan \
     libtinyxml
 
 # DRM
