@@ -238,7 +238,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.oce
+    android.hardware.biometrics.fingerprint@2.1-service
 
 # FlipFlap
 PRODUCT_PACKAGES += \
