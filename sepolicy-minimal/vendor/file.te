@@ -1,2 +1,1 @@
-type carrier_file, fs_type;
-type crashdata_data_file, file_type;
+type tmp_root_mount_file, file_type;
