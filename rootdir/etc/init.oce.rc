@@ -83,11 +83,6 @@ on init
     mkdir /dev/socket/pdx/system/vr/pose 0775 system system
     mkdir /dev/socket/pdx/system/vr/sensors 0775 system system
 
-on late-init
-# HTC USB ++
-    setprop sys.usb.configfs 1
-# HTC USB --
-
 on post-fs-data
     # Create oemnvitems for RIL
     mkdir /data/vendor/oemnvitems 0771 radio radio
