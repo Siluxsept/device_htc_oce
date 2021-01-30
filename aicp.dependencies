@@ -1,0 +1,8 @@
+[
+  {
+    "target_path":"kernel/htc/oce"
+  },
+  {
+    "target_path":"vendor/htc"
+  }
+]

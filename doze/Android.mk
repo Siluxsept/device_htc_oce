@@ -13,8 +13,7 @@ LOCAL_PRIVILEGED_MODULE := true
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
     androidx.core_core \
-    androidx.preference_preference \
-    org.lineageos.platform.internal
+    androidx.preference_preference
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 

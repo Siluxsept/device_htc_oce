@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_oce.mk
+    $(LOCAL_DIR)/aicp_oce.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_oce-user \
-    lineage_oce-userdebug \
-    lineage_oce-eng
+    aicp_oce-user \
+    aicp_oce-userdebug \
+    aicp_oce-eng
