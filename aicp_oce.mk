@@ -33,6 +33,7 @@ PRODUCT_MANUFACTURER := HTC
 PRODUCT_RELEASE_NAME := oce
 
 $(call inherit-product-if-exists, vendor/htc/oce/oce-vendor.mk)
+$(call inherit-product-if-exists, vendor/gapps/gapps.mk)
 
 # Device Fingerprint
 BUILD_FINGERPRINT := htc/ocedugl_00400/htc_ocedugl:8.0.0/OPR1.170623.032/1026541.1:user/release-keys
