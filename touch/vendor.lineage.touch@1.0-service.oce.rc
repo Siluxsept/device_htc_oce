@@ -3,6 +3,8 @@ on boot
     chown system system /sys/android_touch/glove_setting
 
 service vendor.touch-hal-1-0 /vendor/bin/hw/vendor.lineage.touch@1.0-service.oce
+    interface vendor.lineage.touch@1.0::IKeyDisabler default
+    interface vendor.lineage.touch@1.0::IGloveMode default
     class hal
     user system
     group system
