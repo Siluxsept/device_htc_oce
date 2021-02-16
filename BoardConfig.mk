@@ -237,9 +237,6 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libmmcamera_stillmore_lib.so|/system/vendor/lib/libshim_stillmore.so \
     /system/product/lib64/libdpmframework.so|libcutils_shim.so
 
-# Thermal
-USE_DEVICE_SPECIFIC_THERMAL := true    
-
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 # PRODUCT_FULL_TREBLE_OVERRIDE := true
