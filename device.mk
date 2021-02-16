@@ -515,7 +515,8 @@ PRODUCT_BOOT_JARS += \
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
-    device/htc/oce
+    $(LOCAL_PATH) \
+    hardware/google/pixel
 
 # Tethering
 PRODUCT_PACKAGES += \
