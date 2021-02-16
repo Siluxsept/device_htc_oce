@@ -705,6 +705,20 @@ on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
     stop vendor.netmgrd
 
+service vendor.power_sh /vendor/bin/init.power.sh
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service vendor.perfd /vendor/bin/perfd
+   class main
+   user root
+   group root system
+   writepid /dev/cpuset/system-background/tasks
+   disabled
+
 service vendor.port-bridge /vendor/bin/port-bridge
     class main
     user radio

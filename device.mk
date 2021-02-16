@@ -304,6 +304,7 @@ PRODUCT_PACKAGES += \
     init.common.nanohub.rc \
     init.qcom.usb.sh \
     init.qcom.sh \
+    init.power.sh \
     init.htc.fp.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
