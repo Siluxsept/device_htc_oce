@@ -111,7 +111,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.recomputecrop=0 \
     vendor.display.disable_rotator_downscale=1 \
     ro.sf.lcd_density=640 \
-    vendor.display.perf_hint_window=50 \
     vendor.display.disable_skip_validate=1
 
 # IMS
@@ -157,10 +156,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.nfc.port=I2C
-
-# Perf
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=libqti-perfd-client.so
 
 # Priv-app permissions whitelist
 PRODUCT_PROPERTY_OVERRIDES += \
