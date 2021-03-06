@@ -118,7 +118,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.recomputecrop=0 \
     vendor.display.disable_rotator_downscale=1 \
     ro.sf.lcd_density=640 \
-    vendor.display.disable_skip_validate=1
+    vendor.display.disable_skip_validate=1 \
+    vendor.gralloc.disable_ahardware_buffer=1
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
