@@ -80,6 +80,12 @@
     <!-- Allow user to adjust button brightness from settings -->
     <integer name="config_buttonBrightnessSettingDefault">110</integer>
     <bool name="config_deviceHasVariableButtonBrightness">true</bool>
+    <!-- Button backlight control. Possible values are:
+            0 - Not supported
+            1 - Supported, but only on/off mode
+            2 - Supported with variable brightness control
+    -->
+    <integer name="config_deviceSupportsButtonBrightnessControl">2</integer>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
