@@ -187,9 +187,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
 
-# Device Settings
-#PRODUCT_PACKAGES += \
-#    DeviceSettings
+# DeviceParts
+PRODUCT_PACKAGES += \
+    DeviceParts_oce
 
 # Display
 PRODUCT_PACKAGES += \
@@ -216,10 +216,6 @@ PRODUCT_PACKAGES += \
     libqdMetaData \
     libqdMetaData.system \
     libtinyxml
-
-# Doze
-PRODUCT_PACKAGES += \
-    HTCDoze
 
 # DRM
 PRODUCT_PACKAGES += \
