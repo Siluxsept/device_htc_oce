@@ -381,7 +381,7 @@
     </string-array>
     
     <bool name="config_intrusiveBatteryLed">true</bool>
-    <bool name="config_multiColorBatteryLed">true</bool>
+    <bool name="config_multiColorBatteryLed">false</bool>
     <bool name="config_FastChargingLedSupported">false</bool>
     
     <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone23/temp</string>
