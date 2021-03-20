@@ -214,6 +214,7 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libqdMetaData \
     libqdMetaData.system \
+    libqdMetaData.vendor \
     libtinyxml
 
 # DRM
@@ -404,6 +405,7 @@ PRODUCT_COPY_FILES += \
 
 # OMX
 PRODUCT_PACKAGES += \
+    libaacwrapper \
     libc2dcolorconvert \
     libhypv_intercept \
     libextmedia_jni \
@@ -417,6 +419,7 @@ PRODUCT_PACKAGES += \
     libOmxSwVencHevc \
     libOmxVdec \
     libOmxVenc \
+    libstagefright_enc_common \
     libstagefrighthw
 
 # Power
