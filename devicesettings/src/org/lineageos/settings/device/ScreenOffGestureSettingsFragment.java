@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2016 The CyanogenMod Project
+ *               2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,15 +17,18 @@
 
 package org.lineageos.settings.device;
 
+import android.app.ActionBar;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
+import androidx.preference.PreferenceFragment;
+import android.util.Log;
 
-public class ButtonSettingsActivity extends PreferenceActivity {
+public class ScreenOffGestureSettingsFragment extends PreferenceFragment {
+public static final String TAG = "GESTURESETTINGS";
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        getFragmentManager().beginTransaction().replace(android.R.id.content,
-                new ButtonSettingsFragment()).commit();
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        addPreferencesFromResource(R.xml.gesture_panel_screen_off);
+        final ActionBar actionBar = getActivity().getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 }

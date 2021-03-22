@@ -21,7 +21,6 @@ cc_binary {
     vendor: true,
     srcs: [
         "KeyDisabler.cpp",
-        "TouchscreenGesture.cpp",
         "GloveMode.cpp",
         "service.cpp",
     ],

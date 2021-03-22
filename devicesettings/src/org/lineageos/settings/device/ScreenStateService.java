@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2014 SlimRoms Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.settings.device;
 
-import android.content.Context;
+import android.app.Service;
 import android.content.Intent;
-import android.os.UserHandle;
+import android.content.IntentFilter;
+import android.os.IBinder;
 
-public class Utils {
-    public static void broadcastFpEnabled(Context context, boolean enabled) {
-        final Intent intent = new Intent(Constants.FP_HOME_INTENT);
-        intent.putExtra(Constants.FP_HOME_INTENT_ENABLED, enabled);
-        context.sendBroadcastAsUser(intent, UserHandle.CURRENT);
+public class ScreenStateService extends Service {
+
+    public IBinder onBind(Intent intent) {
+        return null;
     }
+
+    public void onCreate() {
+        super.onCreate();
+        ScreenStateReceiver screenStateReceiver = new ScreenStateReceiver();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(Intent.ACTION_SCREEN_ON);
+        intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
+        registerReceiver(screenStateReceiver, intentFilter);
+    }
+
 }

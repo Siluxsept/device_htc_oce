@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2016 The CyanogenMod Project
+ *               2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +17,15 @@
 
 package org.lineageos.settings.device;
 
-public class Constants {
-    public static final String FP_HOME_INTENT = "org.lineageos.settings.device.FP_HOME";
-    public static final String FP_HOME_INTENT_ENABLED = "fp_home";
+import android.os.Bundle;
+import android.preference.PreferenceActivity;
 
-    public static final String FP_HOME_KEY = "fp_home";
+public class ScreenOffGestureSettingsActivity extends PreferenceActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getFragmentManager().beginTransaction()
+            .replace(android.R.id.content, new ScreenOffGestureSettingsFragment()).commit();
+    }
 }

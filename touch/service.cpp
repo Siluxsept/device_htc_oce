@@ -21,32 +21,23 @@
 
 #include "GloveMode.h"
 #include "KeyDisabler.h"
-#include "TouchscreenGesture.h"
 
 using ::android::OK;
 using ::android::sp;
 
 using ::vendor::lineage::touch::V1_0::IKeyDisabler;
 using ::vendor::lineage::touch::V1_0::IGloveMode;
-using ::vendor::lineage::touch::V1_0::ITouchscreenGesture;
 using ::vendor::lineage::touch::V1_0::implementation::KeyDisabler;
 using ::vendor::lineage::touch::V1_0::implementation::GloveMode;
-using ::vendor::lineage::touch::V1_0::implementation::TouchscreenGesture;
 
 int main() {
     sp<IGloveMode> gloveMode = new GloveMode();
-    sp<ITouchscreenGesture> gestureService = new TouchscreenGesture();
     sp<IKeyDisabler> keyDisabler = new KeyDisabler();
 
     android::hardware::configureRpcThreadpool(1, true /*callerWillJoin*/);
 
     if (gloveMode->registerAsService() != android::OK) {
         LOG(ERROR) << "Cannot register touchscreen glove HAL service.";
-        return 1;
-    }
-
-    if (gestureService->registerAsService() != OK) {
-        LOG(ERROR) << "Cannot register touchscreen gesture HAL service.";
         return 1;
     }
 
