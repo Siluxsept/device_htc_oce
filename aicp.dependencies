@@ -1,8 +1,10 @@
 [
   {
+    "repository":  "Siluxsept/kernel_htc_oce",
     "target_path":"kernel/htc/oce"
   },
   {
+    "repository":  "Siluxsept/proprietary_vendor_htc",
     "target_path":"vendor/htc"
   }
 ]
