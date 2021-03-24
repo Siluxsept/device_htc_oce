@@ -434,4 +434,7 @@
 
     <!--  Define Google play service package for FRP-->
     <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
+
+    <!-- Does the device supports Smart Battery -->
+    <bool name="config_smart_battery_available">true</bool>
 </resources>
