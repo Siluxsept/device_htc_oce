@@ -242,6 +242,12 @@ service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
     group system wakelock
     writepid /dev/cpuset/system-background/tasks
 
+service htcdcpd /system/bin/htcdcpd
+    class main
+    user root
+    group root
+    writepid /dev/cpuset/system-background/tasks
+
 service qvrd /system/bin/qvrservice
     class late_start
     user system
