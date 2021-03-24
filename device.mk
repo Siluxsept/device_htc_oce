@@ -481,6 +481,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
 # Sensors
+TARGET_USES_NANOHUB_SENSORHAL := true
+NANOHUB_SENSORHAL_SENSORLIST := $(LOCAL_PATH)/sensorhal/sensorlist.cpp
+
 PRODUCT_PACKAGES += \
     libsensorndkbridge \
     android.hardware.sensors@1.0-impl \
