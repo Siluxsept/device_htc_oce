@@ -263,12 +263,6 @@ service ppd /vendor/bin/mm-pp-dpps
     disabled
     writepid /dev/cpuset/system-background/tasks
 
-service vendor.ipacm /vendor/bin/ipacm
-    class main
-    user radio
-    group radio inet
-    writepid /dev/cpuset/system-background/tasks
-
 service htcnetd /system/bin/htcnetd
     class main
     socket htcnetd stream 0660 root inet
