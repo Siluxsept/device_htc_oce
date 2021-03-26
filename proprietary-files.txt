@@ -970,14 +970,8 @@ vendor/lib64/libvoice-svc.so|f018b4cc35f53cde261ad07e68c28920936e41f3
 vendor/bin/imsrcsd|3d36b51928bb0e3190bda0a58d718456cb9b5ca4
 
 # Sensors
-vendor/bin/sensors.qcom
-vendor/etc/sensors/sensor_def_qcomdev.conf
-vendor/lib/hw/sensors.msm8996.so
-vendor/lib64/hw/sensors.msm8996.so
-vendor/lib/libsensor1.so
-vendor/lib/sensor_calibrate.so
-vendor/lib64/libsensor1.so
-vendor/lib64/sensor_calibrate.so
+lib/libsensor1.so
+lib64/libsensor1.so
 
 # Thermal - from op3 - PKQ1.181203.001
 vendor/bin/thermal-engine|b15c9e8fa54ebb15dfeb36c7fbc834a28b4c836e

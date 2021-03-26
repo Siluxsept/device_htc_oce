@@ -482,9 +482,15 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 TARGET_USES_NANOHUB_SENSORHAL := true
+NANOHUB_SENSORHAL_LID_STATE_ENABLED := true
+NANOHUB_SENSORHAL_DIRECT_REPORT_ENABLED := true
+NANOHUB_SENSORHAL_DYNAMIC_SENSOR_EXT_ENABLED := true
 NANOHUB_SENSORHAL_SENSORLIST := $(LOCAL_PATH)/sensorhal/sensorlist.cpp
+NANOHUB_SENSORHAL_NAME_OVERRIDE := sensors.msm8996
 
 PRODUCT_PACKAGES += \
+    sensors.msm8996 \
+    libhubconnection \
     libsensorndkbridge \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service \
