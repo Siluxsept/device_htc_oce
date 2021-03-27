@@ -602,15 +602,6 @@ etc/firmware/htc_fp6_ta.b05
 etc/firmware/htc_fp6_ta.b06
 etc/firmware/htc_fp6_ta.mdt
 
-# Firmware - Nanohub from Marlin
-vendor/firmware/nanohub.full.bin|fe1d5f2c403535692d6683636ab06d413154ef93
-vendor/firmware/napp_list.cfg|b831d48d6501de89ed2f2ccf8870bcebf9bc0101
-vendor/firmware/activity.napp|2fffbfd4d4b03461eb4e6839e511ef621b55c1f2
-vendor/firmware/double_twist.napp|1991b4781ab3b0ddd2c6c7dbe2e4be5d0757a63d
-vendor/firmware/geofence.napp|e242b7f79a86a51e651b58ae7bffad958950ca81
-vendor/firmware/pickup_gesture.napp|023d91bb7b30606be6b8d3f567d336bfe4cf2744
-vendor/firmware/sig_motion.napp|32a187b31ab10d51f2f8077c40921bb06ea2d659
-
 # Gatekeeper - LA.UM.6.5.r1-02500-8x96.0
 -vendor/lib/hw/gatekeeper.msm8996.so|ac555627694d57b1dd79b4ddf3faec2e9174967f
 -vendor/lib64/hw/gatekeeper.msm8996.so|285d7f197ee11a5eac1b1e333f7dfe8684087859
