@@ -188,8 +188,8 @@ PRODUCT_PACKAGES += \
     NoCutoutOverlay
 
 # Device Settings
-PRODUCT_PACKAGES += \
-    GestureHandler
+# PRODUCT_PACKAGES += \
+#     GestureHandler
 
 # Display
 PRODUCT_PACKAGES += \
