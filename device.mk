@@ -183,10 +183,6 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     services-ext
 
-# Cutout
-PRODUCT_PACKAGES += \
-    NoCutoutOverlay
-
 # Device Settings
 PRODUCT_PACKAGES += \
     GestureHandler
@@ -242,10 +238,6 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
-
-# FlipFlap
-PRODUCT_PACKAGES += \
-    FlipFlap
 
 # fwk-detect
 PRODUCT_PACKAGES += \
