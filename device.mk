@@ -183,10 +183,6 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     services-ext
 
-# Device Settings
-PRODUCT_PACKAGES += \
-    GestureHandler
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
