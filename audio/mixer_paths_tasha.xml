@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- Version: 8996_ocean_note_20171220_v20 -->
+<!-- Copyright (c) 2015-2016, 2018, The Linux Foundation. All rights reserved.    -->
+<!--                                                                        -->
+<!-- Redistribution and use in source and binary forms, with or without     -->
+<!-- modification, are permitted provided that the following conditions are -->
+<!-- met:                                                                   -->
+<!--     * Redistributions of source code must retain the above copyright   -->
+<!--       notice, this list of conditions and the following disclaimer.    -->
+<!--     * Redistributions in binary form must reproduce the above          -->
+<!--       copyright notice, this list of conditions and the following      -->
+<!--       disclaimer in the documentation and/or other materials provided  -->
+<!--       with the distribution.                                           -->
+<!--     * Neither the name of The Linux Foundation nor the names of its    -->
+<!--       contributors may be used to endorse or promote products derived  -->
+<!--       from this software without specific prior written permission.    -->
+<!--                                                                        -->
+<!-- THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED           -->
+<!-- WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF   -->
+<!-- MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT -->
+<!-- ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS -->
+<!-- BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR -->
+<!-- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF   -->
+<!-- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR        -->
+<!-- BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,  -->
+<!-- OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN -->
+<!-- IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                          -->
 <mixer>
     <!-- These are the initial mixer settings -->
     <ctl name="Voice Rx Device Mute" id="0" value="0" />
@@ -88,6 +112,7 @@
     <ctl name="HDMI Mixer MultiMedia4" value="0" />
     <ctl name="HDMI Mixer MultiMedia5" value="0" />
     <ctl name="HDMI Mixer MultiMedia7" value="0" />
+    <ctl name="HDMI Mixer MultiMedia9" value="0" />
     <ctl name="HDMI Mixer MultiMedia10" value="0" />
     <ctl name="HDMI Mixer MultiMedia11" value="0" />
     <ctl name="HDMI Mixer MultiMedia12" value="0" />
@@ -137,15 +162,15 @@
     <ctl name="SLIM TX2 MUX" value="ZERO" />
     <ctl name="SLIM TX1 MUX" value="ZERO" />
     <ctl name="SLIM TX0 MUX" value="ZERO" />
-    <ctl name="ADC MUX8" value="AMIC" />
-    <ctl name="ADC MUX7" value="AMIC" />
-    <ctl name="ADC MUX6" value="AMIC" />
-    <ctl name="ADC MUX5" value="AMIC" />
-    <ctl name="ADC MUX4" value="AMIC" />
-    <ctl name="ADC MUX3" value="AMIC" />
-    <ctl name="ADC MUX2" value="AMIC" />
-    <ctl name="ADC MUX1" value="AMIC" />
-    <ctl name="ADC MUX0" value="AMIC" />
+    <ctl name="ADC MUX8" value="DMIC" />
+    <ctl name="ADC MUX7" value="DMIC" />
+    <ctl name="ADC MUX6" value="DMIC" />
+    <ctl name="ADC MUX5" value="DMIC" />
+    <ctl name="ADC MUX4" value="DMIC" />
+    <ctl name="ADC MUX3" value="DMIC" />
+    <ctl name="ADC MUX2" value="DMIC" />
+    <ctl name="ADC MUX1" value="DMIC" />
+    <ctl name="ADC MUX0" value="DMIC" />
     <ctl name="DMIC MUX0" value="ZERO" />
     <ctl name="DMIC MUX1" value="ZERO" />
     <ctl name="DMIC MUX2" value="ZERO" />
@@ -729,6 +754,10 @@
         <ctl name="HDMI Mixer MultiMedia4" value="1" />
     </path>
 
+    <path name="silence-playback hdmi">
+        <ctl name="HDMI Mixer MultiMedia9" value="1" />
+    </path>
+
     <path name="compress-offload-playback bt-sco">
         <ctl name="AUX_PCM_RX Audio Mixer MultiMedia4" value="1" />
     </path>
@@ -747,6 +776,15 @@
         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia4" value="1" />
     </path>
 
+    <path name="compress-offload-playback usb-headphones">
+        <path name="compress-offload-playback afe-proxy" />
+    </path>
+
+    <path name="compress-offload-playback speaker-and-usb-headphones">
+        <path name="compress-offload-playback usb-headphones" />
+        <path name="compress-offload-playback" />
+    </path>
+
     <path name="compress-offload-playback speaker-bt-sco">
         <path name="compress-offload-playback bt-sco" />
         <path name="compress-offload-playback" />
@@ -754,15 +792,6 @@
 
     <path name="compress-offload-playback speaker-bt-sco-wb">
         <path name="compress-offload-playback bt-sco-wb" />
-        <path name="compress-offload-playback" />
-    </path>
-
-    <path name="compress-offload-playback usb-headphones">
-        <path name="compress-offload-playback afe-proxy" />
-    </path>
-
-    <path name="compress-offload-playback speaker-and-usb-headphones">
-        <path name="compress-offload-playback usb-headphones" />
         <path name="compress-offload-playback" />
     </path>
 
@@ -1928,46 +1957,15 @@
     <!-- These are actual sound device specific mixer settings -->
     <!-- htc device start Main TX Path -->
     <path name="main-mic">
-        <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
-        <ctl name="SLIM_0_TX Channels" id="0" value="One" />
-        <ctl name="SLIM TX7 MUX" id="0" value="DEC7" />
-        <ctl name="ADC MUX7" id="0" value="DMIC" />
-        <ctl name="DMIC MUX7" id="0" value="DMIC1" />
-        <ctl name="IIR0 INP0 MUX" id="0" value="DEC7" />
+        <ctl name="SLIM_0_TX Channels" value="One" />
+        <ctl name="AIF1_CAP Mixer SLIM TX6" value="1" />
+        <ctl name="SLIM TX6 MUX" value="DEC6" />
+        <ctl name="ADC MUX6" value="AMIC" />
+        <ctl name="AMIC MUX6" value="ADC1" />
     </path>
 
     <!-- htc device start 2nd TX Path -->
     <path name="2nd-mic">
-        <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
-        <ctl name="SLIM_0_TX Channels" id="0" value="One" />
-        <ctl name="SLIM TX7 MUX" id="0" value="DEC7" />
-        <ctl name="ADC MUX7" id="0" value="DMIC" />
-        <ctl name="DMIC MUX7" id="0" value="DMIC3" />
-        <ctl name="IIR0 INP0 MUX" id="0" value="DEC7" />
-    </path>
-
-    <!-- htc device start 3rd TX Path -->
-    <path name="3rd-mic">
-        <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
-        <ctl name="SLIM_0_TX Channels" id="0" value="One" />
-        <ctl name="SLIM TX7 MUX" id="0" value="DEC7" />
-        <ctl name="ADC MUX7" id="0" value="DMIC" />
-        <ctl name="DMIC MUX7" id="0" value="DMIC2" />
-        <ctl name="IIR0 INP0 MUX" id="0" value="DEC7" />
-    </path>
-
-    <!-- htc device start 4th TX Path -->
-    <path name="4th-mic">
-        <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
-        <ctl name="SLIM_0_TX Channels" id="0" value="One" />
-        <ctl name="SLIM TX7 MUX" id="0" value="DEC7" />
-        <ctl name="ADC MUX7" id="0" value="DMIC" />
-        <ctl name="DMIC MUX7" id="0" value="DMIC5" />
-        <ctl name="IIR0 INP0 MUX" id="0" value="DEC7" />
-    </path>
-
-    <!-- AS HS L mic -->
-    <path name="headset-mic-lch">
         <ctl name="SLIM_0_TX Channels" value="One" />
         <ctl name="AIF1_CAP Mixer SLIM TX3" value="1" />
         <ctl name="SLIM TX3 MUX" value="DEC3" />
@@ -1975,8 +1973,8 @@
         <ctl name="AMIC MUX3" value="ADC3" />
     </path>
 
-    <!-- AS HS R mic -->
-    <path name="headset-mic-rch">
+    <!-- htc device start 3rd TX Path -->
+    <path name="3rd-mic">
         <ctl name="SLIM_0_TX Channels" value="One" />
         <ctl name="AIF1_CAP Mixer SLIM TX4" value="1" />
         <ctl name="SLIM TX4 MUX" value="DEC4" />
@@ -1990,10 +1988,10 @@
         <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
         <ctl name="SLIM TX7 MUX" value="DEC7" />
         <ctl name="SLIM TX8 MUX" value="DEC8" />
-        <ctl name="ADC MUX7" value="DMIC" />
-        <ctl name="ADC MUX8" value="DMIC" />
-        <ctl name="DMIC MUX7" value="DMIC1" />
-        <ctl name="DMIC MUX8" value="DMIC3" />
+        <ctl name="ADC MUX7" value="AMIC" />
+        <ctl name="ADC MUX8" value="AMIC" />
+        <ctl name="AMIC MUX7" value="ADC1" />
+        <ctl name="AMIC MUX8" value="ADC3" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
     </path>
 
@@ -2003,10 +2001,10 @@
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
         <ctl name="SLIM TX8 MUX" value="DEC8" />
         <ctl name="SLIM TX7 MUX" value="DEC7" />
-        <ctl name="ADC MUX8" value="DMIC" />
-        <ctl name="ADC MUX7" value="DMIC" />
-        <ctl name="DMIC MUX8" value="DMIC3" />
-        <ctl name="DMIC MUX7" value="DMIC1" />
+        <ctl name="ADC MUX8" value="AMIC" />
+        <ctl name="ADC MUX7" value="AMIC" />
+        <ctl name="AMIC MUX8" value="ADC3" />
+        <ctl name="AMIC MUX7" value="ADC1" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
     </path>
 
@@ -2016,180 +2014,189 @@
         <ctl name="AIF1_CAP Mixer SLIM TX3" value="1" />
         <ctl name="SLIM TX4 MUX" value="DEC4" />
         <ctl name="SLIM TX3 MUX" value="DEC3" />
-        <ctl name="ADC MUX4" value="DMIC" />
-        <ctl name="ADC MUX3" value="DMIC" />
-        <ctl name="DMIC MUX4" value="DMIC2" />
-        <ctl name="DMIC MUX3" value="DMIC3" />
+        <ctl name="ADC MUX4" value="AMIC" />
+        <ctl name="ADC MUX3" value="AMIC" />
+        <ctl name="AMIC MUX4" value="ADC4" />
+        <ctl name="AMIC MUX3" value="ADC3" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
     </path>
 
-    <!-- Quad MIC devices -->
-    <path name="speaker-qmic">
-        <ctl name="AIF1_CAP Mixer SLIM TX5" value="1" />
-        <ctl name="AIF1_CAP Mixer SLIM TX6" value="1" />
-        <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
-        <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
-        <ctl name="SLIM_0_TX Channels" value="Four" />
-        <ctl name="SLIM TX5 MUX" value="DEC5" />
-        <ctl name="ADC MUX5" value="DMIC" />
-        <ctl name="DMIC MUX5" value="DMIC3" />
-        <ctl name="SLIM TX6 MUX" value="DEC6" />
-        <ctl name="ADC MUX6" value="DMIC" />
-        <ctl name="DMIC MUX6" value="DMIC5" />
-        <ctl name="SLIM TX7 MUX" value="DEC7" />
-        <ctl name="ADC MUX7" value="DMIC" />
-        <ctl name="DMIC MUX7" value="DMIC1" />
-        <ctl name="SLIM TX8 MUX" value="DEC8" />
-        <ctl name="ADC MUX8" value="DMIC" />
-        <ctl name="DMIC MUX8" value="DMIC2" />
-    </path>
-
-    <!-- D: 17dB -->
+    <!-- A: 18dB D: 0dB -->
     <path name="line">
         <path name="main-mic" />
-        <ctl name="DEC7 Volume" value="103" />
+        <ctl name="ADC1 Volume" value="14" />
+        <ctl name="DEC6 Volume" value="84" />
     </path>
 
-    <!-- D: -1dB -->
+    <!-- A: 3dB D: 0dB -->
     <path name="line-24bit">
         <path name="main-mic" />
-        <ctl name="DEC7 Volume" value="85" />
+        <ctl name="ADC1 Volume" value="2" />
+        <ctl name="DEC6 Volume" value="84" />
     </path>
 
-    <!-- D: 22dB -->
+    <!-- A: 21dB D: 6dB -->
     <path name="line-vr">
         <path name="main-mic" />
-        <ctl name="DEC7 Volume" value="106" />
+        <ctl name="ADC1 Volume" value="14" />
+        <ctl name="DEC6 Volume" value="90" />
     </path>
 
-    <!-- D: 22dB -->
+    <!-- A: 21dB D: 6dB -->
     <path name="line-voice">
         <path name="main-mic" />
-        <ctl name="DEC7 Volume" value="106" />
+        <ctl name="ADC1 Volume" value="14" />
+        <ctl name="DEC6 Volume" value="90" />
     </path>
 
-    <!-- D: 9dB -->
+    <!-- A: 12dB D: 2dB -->
     <path name="secondmic">
         <path name="2nd-mic" />
-        <ctl name="DEC7 Volume" value="93" />
+        <ctl name="ADC3 Volume" value="8" />
+        <ctl name="DEC3 Volume" value="86" />
     </path>
 
-    <!-- D: 9dB -->
+    <!-- A: 12dB D: 2dB -->
     <path name="thirdmic">
         <path name="3rd-mic" />
-        <ctl name="DEC7 Volume" value="93" />
+        <ctl name="ADC4 Volume" value="8" />
+        <ctl name="DEC4 Volume" value="86" />
     </path>
 
-    <!-- D: 16dB -->
+    <!-- A: 18dB D: 3dB -->
     <path name="line-car-voice">
         <path name="dual-mic-with-3rdmic" />
-        <ctl name="DEC4 Volume" value="100" />
-        <ctl name="DEC3 Volume" value="100" />
+        <ctl name="ADC3 Volume" value="12" />
+        <ctl name="ADC4 Volume" value="12" />
+        <ctl name="DEC7 Volume" value="87" />
+        <ctl name="DEC8 Volume" value="87" />
     </path>
 
-    <!-- D: 16dB -->
+    <!-- A: 18dB D: 3dB -->
     <path name="line-hw-voip">
         <path name="dual-mic-with-3rdmic" />
-        <ctl name="DEC4 Volume" value="100" />
-        <ctl name="DEC3 Volume" value="100" />
+        <ctl name="ADC3 Volume" value="12" />
+        <ctl name="ADC4 Volume" value="12" />
+        <ctl name="DEC7 Volume" value="87" />
+        <ctl name="DEC8 Volume" value="87" />
     </path>
 
-    <!-- D: 16dB -->
+    <!-- A: 18dB D: 3dB -->
     <path name="line-audio-voip">
         <path name="dual-mic-with-3rdmic" />
-        <ctl name="DEC4 Volume" value="100" />
-        <ctl name="DEC3 Volume" value="100" />
+        <ctl name="ADC3 Volume" value="12" />
+        <ctl name="ADC4 Volume" value="12" />
+        <ctl name="DEC7 Volume" value="87" />
+        <ctl name="DEC8 Volume" value="87" />
     </path>
 
-    <!-- D: 16dB -->
+    <!-- A: 18dB D: 3dB -->
     <path name="speaker-dmic-endfire">
         <path name="dual-mic-with-3rdmic" />
-        <ctl name="DEC4 Volume" value="100" />
-        <ctl name="DEC3 Volume" value="100" />
+        <ctl name="ADC3 Volume" value="12" />
+        <ctl name="ADC4 Volume" value="12" />
+        <ctl name="DEC7 Volume" value="87" />
+        <ctl name="DEC8 Volume" value="87" />
         <ctl name="IIR1 INP1 MUX" value="DEC8" />
     </path>
 
-    <!-- D: 16dB -->
+    <!-- A: 18dB D: 3dB -->
     <path name="dmic-endfire">
         <path name="dual-mic" />
-        <ctl name="DEC7 Volume" value="100" />
-        <ctl name="DEC8 Volume" value="100" />
+        <ctl name="ADC1 Volume" value="12" />
+        <ctl name="ADC3 Volume" value="12" />
+        <ctl name="DEC7 Volume" value="87" />
+        <ctl name="DEC8 Volume" value="87" />
     </path>
 
-    <!-- D: 16dB -->
+    <!-- A: 18dB D: 3dB -->
     <path name="dmic-hac-endfire">
         <path name="dual-mic" />
-        <ctl name="DEC7 Volume" value="100" />
-        <ctl name="DEC8 Volume" value="100" />
+        <ctl name="ADC1 Volume" value="12" />
+        <ctl name="ADC3 Volume" value="12" />
+        <ctl name="DEC7 Volume" value="87" />
+        <ctl name="DEC8 Volume" value="87" />
     </path>
 
-    <!-- D: 16dB -->
+    <!-- A: 18dB D: 3dB -->
     <path name="dmic-hac-endfire-sidetone">
         <path name="dual-mic" />
-        <ctl name="DEC7 Volume" value="100" />
-        <ctl name="DEC8 Volume" value="100" />
+        <ctl name="ADC1 Volume" value="12" />
+        <ctl name="ADC3 Volume" value="12" />
+        <ctl name="DEC7 Volume" value="87" />
+        <ctl name="DEC8 Volume" value="87" />
     </path>
 
-    <!-- D: 16dB -->
+    <!-- A: 12dB D: 0dB -->
     <path name="line-landscapecam">
-        <path name="speaker-qmic" />
-        <ctl name="DEC5 Volume" value="100" />
-        <ctl name="DEC6 Volume" value="100" />
-        <ctl name="DEC7 Volume" value="100" />
-        <ctl name="DEC8 Volume" value="100" />
+        <path name="dual-mic-inverse" />
+        <ctl name="ADC1 Volume" value="8" />
+        <ctl name="ADC3 Volume" value="8" />
+        <ctl name="DEC7 Volume" value="84" />
+        <ctl name="DEC8 Volume" value="84" />
     </path>
 
-    <!-- D: 16dB -->
+    <!-- A: 12dB D: 0dB -->
     <path name="line-invertlandscapecam">
-        <path name="speaker-qmic" />
-        <ctl name="DEC5 Volume" value="100" />
-        <ctl name="DEC6 Volume" value="100" />
-        <ctl name="DEC7 Volume" value="100" />
-        <ctl name="DEC8 Volume" value="100" />
+        <path name="dual-mic" />
+        <ctl name="ADC1 Volume" value="8" />
+        <ctl name="ADC3 Volume" value="8" />
+        <ctl name="DEC7 Volume" value="84" />
+        <ctl name="DEC8 Volume" value="84" />
     </path>
 
-    <!-- D: 16dB -->
+    <!-- A: 12dB D: 0dB -->
     <path name="line-portraitcam">
-        <path name="speaker-qmic" />
-        <ctl name="DEC5 Volume" value="100" />
-        <ctl name="DEC6 Volume" value="100" />
-        <ctl name="DEC7 Volume" value="100" />
-        <ctl name="DEC8 Volume" value="100" />
+        <path name="dual-mic" />
+        <ctl name="ADC1 Volume" value="8" />
+        <ctl name="ADC3 Volume" value="8" />
+        <ctl name="DEC6 Volume" value="84" />
+        <ctl name="DEC4 Volume" value="84" />
     </path>
 
-    <!-- D: -4dB -->
+    <!-- A: 0dB D: 0dB -->
     <path name="24bit-line-landscapecam">
         <path name="dual-mic-inverse" />
-        <ctl name="DEC8 Volume" value="82" />
-        <ctl name="DEC7 Volume" value="82" />
+        <ctl name="ADC1 Volume" value="0" />
+        <ctl name="ADC3 Volume" value="0" />
+        <ctl name="DEC7 Volume" value="84" />
+        <ctl name="DEC8 Volume" value="84" />
     </path>
 
-    <!-- D: -4dB -->
+    <!-- A: 0dB D: 0dB -->
     <path name="24bit-line-invertlandscapecam">
         <path name="dual-mic" />
-        <ctl name="DEC7 Volume" value="82" />
-        <ctl name="DEC8 Volume" value="82" />
+        <ctl name="ADC1 Volume" value="0" />
+        <ctl name="ADC3 Volume" value="0" />
+        <ctl name="DEC7 Volume" value="84" />
+        <ctl name="DEC8 Volume" value="84" />
     </path>
 
-    <!-- D: -4dB -->
+    <!-- A: 0dB D: 0dB -->
     <path name="24bit-line-portraitcam">
         <path name="dual-mic" />
-        <ctl name="DEC7 Volume" value="82" />
-        <ctl name="DEC8 Volume" value="82" />
+        <ctl name="ADC1 Volume" value="0" />
+        <ctl name="ADC3 Volume" value="0" />
+        <ctl name="DEC6 Volume" value="84" />
+        <ctl name="DEC4 Volume" value="84" />
     </path>
 
-    <!-- D: 16dB -->
+    <!-- A: 18dB D: 3dB -->
     <path name="handset-hw-voip">
         <path name="dual-mic" />
-        <ctl name="DEC7 Volume" value="100" />
-        <ctl name="DEC8 Volume" value="100" />
+        <ctl name="ADC1 Volume" value="12" />
+        <ctl name="ADC3 Volume" value="12" />
+        <ctl name="DEC7 Volume" value="87" />
+        <ctl name="DEC8 Volume" value="87" />
     </path>
 
-    <!-- D: 16dB -->
+    <!-- A: 18dB D: 3dB -->
     <path name="handset-audio-voip">
         <path name="dual-mic" />
-        <ctl name="DEC7 Volume" value="100" />
-        <ctl name="DEC8 Volume" value="100" />
+        <ctl name="ADC1 Volume" value="12" />
+        <ctl name="ADC3 Volume" value="12" />
+        <ctl name="DEC7 Volume" value="87" />
+        <ctl name="DEC8 Volume" value="87" />
     </path>
 
     <!-- HS RX Path RX0 : L ch RX1 : Rch -->
@@ -2265,8 +2272,6 @@
         <path name="headphones-generic" />
         <ctl name="RX0 Digital Volume" value="84" />
         <ctl name="RX1 Digital Volume" value="84" />
-        <ctl name="RX1 Mix Digital Volume" value="82" />
-        <ctl name="RX2 Mix Digital Volume" value="82" />
         <ctl name="HPHL Volume" value="20" />
         <ctl name="HPHR Volume" value="20" />
     </path>
@@ -2493,28 +2498,25 @@
         <path name="speaker-generic" />
     </path>
 
-    <!-- mfg-rec-devices main mic D: 17dB -->
+    <!-- mfg-rec-devices main mic A: 24dB D: 8dB -->
     <path name="mfg-rec-01">
         <path name="main-mic" />
-        <ctl name="DEC7 Volume" value="101" />
+        <ctl name="ADC1 Volume" value="16" />
+        <ctl name="DEC6 Volume" value="92" />
     </path>
 
-    <!-- mfg-rec-devices 2nd mic D: 17dB -->
+    <!-- mfg-rec-devices 2nd mic A: 24dB D: 8dB -->
     <path name="mfg-rec-13">
         <path name="2nd-mic" />
-        <ctl name="DEC7 Volume" value="101" />
+        <ctl name="ADC3 Volume" value="16" />
+        <ctl name="DEC3 Volume" value="92" />
     </path>
 
-    <!-- mfg-rec-devices 3rd mic D: 17dB -->
+    <!-- mfg-rec-devices 3rd mic A: 24dB D: 8dB -->
     <path name="mfg-rec-14">
         <path name="3rd-mic" />
-        <ctl name="DEC7 Volume" value="101" />
-    </path>
-
-    <!-- mfg-rec-devices 4th mic D: 17dB -->
-    <path name="mfg-rec-15">
-        <path name="4th-mic" />
-        <ctl name="DEC7 Volume" value="101" />
+        <ctl name="ADC4 Volume" value="16" />
+        <ctl name="DEC4 Volume" value="92" />
     </path>
 
     <!-- mfg-rec-devices HS mic A: 24dB D: 8dB -->
@@ -2524,42 +2526,25 @@
         <ctl name="DEC0 Volume" value="92" />
     </path>
 
-    <!-- mfg-rec-devices HS mic A: 24dB D: 8dB -->
-    <path name="mfg-rec-03">
-        <path name="headset-mic-lch" />
-        <ctl name="ADC3 Volume" value="16" />
-        <ctl name="DEC3 Volume" value="92" />
-    </path>
-
-    <!-- mfg-rec-devices HS mic A: 24dB D: 8dB -->
-    <path name="mfg-rec-04">
-        <path name="headset-mic-rch" />
-        <ctl name="ADC4 Volume" value="16" />
-        <ctl name="DEC4 Volume" value="92" />
-    </path>
-
-    <!-- mfg-rec-devices-minibox main mic D: -1dB -->
+    <!-- mfg-rec-devices-minibox main mic A: 6dB D: 0dB -->
     <path name="mfg-rec-21">
         <path name="main-mic" />
-        <ctl name="DEC7 Volume" value="83" />
+        <ctl name="ADC1 Volume" value="4" />
+        <ctl name="DEC6 Volume" value="84" />
     </path>
 
-    <!-- mfg-rec-devices-minibox 2nd mic D: -1dB -->
+    <!-- mfg-rec-devices-minibox 2nd mic A: 6dB D: 0dB -->
     <path name="mfg-rec-22">
         <path name="2nd-mic" />
-        <ctl name="DEC7 Volume" value="83" />
+        <ctl name="ADC3 Volume" value="4" />
+        <ctl name="DEC4 Volume" value="84" />
     </path>
 
-    <!-- mfg-rec-devices-minibox 3rd mic D: -1dB -->
+    <!-- mfg-rec-devices-minibox 3rd mic A: 6dB D: 0dB -->
     <path name="mfg-rec-23">
         <path name="3rd-mic" />
-        <ctl name="DEC7 Volume" value="83" />
-    </path>
-
-    <!-- mfg-rec-devices-minibox 4th mic D: -1dB -->
-    <path name="mfg-rec-24">
-        <path name="4th-mic" />
-        <ctl name="DEC7 Volume" value="83" />
+        <ctl name="ADC4 Volume" value="4" />
+        <ctl name="DEC3 Volume" value="84" />
     </path>
 
     <!-- mfg-playback speaker -->
@@ -2737,8 +2722,7 @@
     </path>
 
     <path name="handset-mic-sbc">
-        <path name="adc5" />
-        <ctl name="ADC5 Volume" value="12" />
+        <path name="dmic3" />
     </path>
 
     <path name="anc-handset">
@@ -2771,38 +2755,6 @@
         <ctl name="RX INT2 SPLINE MIX HPHR Switch" value="1" />
         <ctl name="COMP1 Switch" value="1" />
         <ctl name="COMP2 Switch" value="1" />
-    </path>
-
-    <path name="headset-mic-as20-cal-ear">
-        <ctl name="AIF1_CAP Mixer SLIM TX3" value="1" />
-        <ctl name="AIF1_CAP Mixer SLIM TX4" value="1" />
-        <ctl name="SLIM TX3 MUX" value="DEC3" />
-        <ctl name="SLIM TX4 MUX" value="DEC4" />
-        <ctl name="ADC MUX3" value="AMIC" />
-        <ctl name="ADC MUX4" value="AMIC" />
-        <ctl name="AMIC MUX3" value="ADC3" />
-        <ctl name="AMIC MUX4" value="ADC4" />
-        <ctl name="SLIM_0_TX Channels" value="Two" />
-        <ctl name="ADC3 Volume" value="14" />
-        <ctl name="ADC4 Volume" value="14" />
-        <ctl name="DEC3 Volume" value="93" />
-        <ctl name="DEC4 Volume" value="93" />
-    </path>
-
-    <path name="headset-mic-as20-cal-ambient">
-        <ctl name="AIF1_CAP Mixer SLIM TX3" value="1" />
-        <ctl name="AIF1_CAP Mixer SLIM TX4" value="1" />
-        <ctl name="SLIM TX3 MUX" value="DEC3" />
-        <ctl name="SLIM TX4 MUX" value="DEC4" />
-        <ctl name="ADC MUX3" value="AMIC" />
-        <ctl name="ADC MUX4" value="AMIC" />
-        <ctl name="AMIC MUX3" value="ADC3" />
-        <ctl name="AMIC MUX4" value="ADC4" />
-        <ctl name="SLIM_0_TX Channels" value="Two" />
-        <ctl name="ADC3 Volume" value="14" />
-        <ctl name="ADC4 Volume" value="14" />
-        <ctl name="DEC3 Volume" value="93" />
-        <ctl name="DEC4 Volume" value="93" />
     </path>
 
     <path name="headset-mic">
@@ -3025,6 +2977,9 @@
         <path name="speaker-generic" />
     </path>
 
+    <path name="aanc-path">
+    </path>
+
     <path name="aanc-handset-mic">
         <ctl name="AIF1_CAP Mixer SLIM TX6" value="1" />
         <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
@@ -3133,6 +3088,27 @@
         <path name="dmic-broadside" />
     </path>
 
+    <!-- Quad MIC devices -->
+    <path name="speaker-qmic">
+        <ctl name="AIF1_CAP Mixer SLIM TX5" value="1" />
+        <ctl name="AIF1_CAP Mixer SLIM TX6" value="1" />
+        <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
+        <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
+        <ctl name="SLIM_0_TX Channels" value="Four" />
+        <ctl name="SLIM TX5 MUX" value="DEC5" />
+        <ctl name="ADC MUX5" value="DMIC" />
+        <ctl name="DMIC MUX5" value="DMIC0" />
+        <ctl name="SLIM TX6 MUX" value="DEC6" />
+        <ctl name="ADC MUX6" value="DMIC" />
+        <ctl name="DMIC MUX6" value="DMIC1" />
+        <ctl name="SLIM TX7 MUX" value="DEC7" />
+        <ctl name="ADC MUX7" value="DMIC" />
+        <ctl name="DMIC MUX7" value="DMIC2" />
+        <ctl name="SLIM TX8 MUX" value="DEC8" />
+        <ctl name="ADC MUX8" value="DMIC" />
+        <ctl name="DMIC MUX8" value="DMIC3" />
+    </path>
+
     <path name="speaker-qmic-liquid">
         <ctl name="AIF1_CAP Mixer SLIM TX5" value="1" />
         <ctl name="AIF1_CAP Mixer SLIM TX6" value="1" />
@@ -3227,17 +3203,33 @@
         <ctl name="MAD Input" value="DMIC0" />
     </path>
 
+    <path name="unprocessed-handset-mic">
+        <path name="handset-mic" />
+    </path>
+
+    <path name="unprocessed-mic">
+        <path name="unprocessed-handset-mic" />
+    </path>
+
+    <path name="unprocessed-stereo-mic">
+        <path name="voice-rec-dmic-ef" />
+    </path>
+
+    <path name="unprocessed-three-mic">
+        <path name="three-mic" />
+    </path>
+
+    <path name="unprocessed-quad-mic">
+        <path name="quad-mic" />
+    </path>
+
+    <path name="unprocessed-headset-mic">
+        <path name="headset-mic" />
+    </path>
+
     <!-- Added for ADSP testfwk -->
     <path name="ADSP testfwk">
         <ctl name="SLIMBUS_DL_HL Switch" value="1" />
     </path>
-
-    <!-- Using special acdb for JBL USB HEADSET during voice call -->
-    <path name="voice-tx-jbl">
-    </path>
-
-    <path name="voice-rx-jbl">
-    </path>
-
 
 </mixer>
